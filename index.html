@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Board Games on Arduino — Tic-Tac-Toe &amp; Checkers</title>
+<meta name="description" content="A hand-wired Arduino Mega project: tic-tac-toe and checkers played on an 8x8 LED matrix, with a minimax AI opponent.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-void:#0a0f0c;
+    --bg-panel:#121815;
+    --bg-panel-2:#161e19;
+    --line:#22322a;
+    --line-soft:#1a2620;
+    --text-primary:#e9efe9;
+    --text-muted:#8fa197;
+    --text-dim:#5e6f66;
+    --copper:#c9814a;
+    --copper-bright:#e6a366;
+    --led-red:#ff5c5c;
+    --led-green:#52e08a;
+    --led-blue:#5b9dff;
+    --led-amber:#e8b23d;
+    --sq-white:#28332c;
+    --sq-black:#0c1210;
+    --radius:3px;
+    --maxw:1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--bg-void);
+    background-image:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(201,129,74,0.07), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(91,157,255,0.05), transparent 60%);
+    color:var(--text-primary);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--copper-bright);}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--led-amber);
+    outline-offset:3px;
+  }
+
+  img{max-width:100%; display:block;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--copper);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:0 0 14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:18px; height:1px;
+    background:var(--copper);
+    display:inline-block;
+  }
+
+  /* ---------- top nav ---------- */
+  .topnav{
+    position:sticky; top:0; z-index:40;
+    background:rgba(10,15,12,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .topnav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px; flex-wrap:wrap;
+  }
+  .back-link{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--text-muted);
+    text-decoration:none;
+    display:flex; align-items:center; gap:6px;
+  }
+  .back-link:hover{color:var(--copper-bright);}
+  .subnav{display:flex; gap:4px; flex-wrap:wrap;}
+  .subnav a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-muted);
+    text-decoration:none;
+    padding:6px 11px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    transition:border-color .15s, color .15s;
+  }
+  .subnav a:hover{color:var(--text-primary); border-color:var(--copper);}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 40px;}
+  .hero h1{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:700;
+    font-size:clamp(30px, 5.2vw, 50px);
+    line-height:1.12;
+    letter-spacing:-0.01em;
+    margin:0 0 20px;
+    max-width:14ch;
+  }
+  .hero .lede{
+    font-size:17px;
+    color:var(--text-muted);
+    max-width:56ch;
+    margin:0 0 28px;
+  }
+  .tagrow{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:48px;}
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-muted);
+    border:1px solid var(--line);
+    background:var(--bg-panel);
+    padding:5px 10px;
+    border-radius:3px;
+  }
+
+  /* ---------- LED matrix motif ---------- */
+  .board-demo{
+    display:flex; gap:36px; flex-wrap:wrap; align-items:flex-end;
+    padding:28px; border:1px solid var(--line); border-radius:6px;
+    background:linear-gradient(180deg, var(--bg-panel), var(--bg-void));
+  }
+  .board-demo-item{display:flex; flex-direction:column; align-items:center; gap:12px;}
+  .matrix{
+    display:grid;
+    grid-template-columns:repeat(8, 1fr);
+    gap:3px;
+    width:176px; height:176px;
+  }
+  .matrix .led, .matrix .cell{
+    border-radius:2px;
+    background:#1a2119;
+  }
+  .matrix .led.blank{background:#242e28;}
+  .matrix .led.border{
+    background:var(--led-amber);
+    box-shadow:0 0 6px rgba(232,178,61,0.65);
+  }
+  .matrix .led.x{
+    background:var(--led-red);
+    box-shadow:0 0 7px rgba(255,92,92,0.7);
+  }
+  .matrix .led.o{
+    background:var(--led-green);
+    box-shadow:0 0 7px rgba(82,224,138,0.7);
+  }
+  .matrix .cell.white{background:var(--sq-white);}
+  .matrix .cell.black{background:var(--sq-black);}
+  .matrix .cell.blue{
+    background:var(--led-blue);
+    box-shadow:0 0 7px rgba(91,157,255,0.7);
+  }
+  .matrix .cell.red{
+    background:var(--led-red);
+    box-shadow:0 0 7px rgba(255,92,92,0.7);
+  }
+  .board-demo-item .cap{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--text-dim);
+    text-align:center;
+  }
+  .matrix.pulse .led.x, .matrix.pulse .led.o,
+  .matrix.pulse .cell.blue, .matrix.pulse .cell.red{
+    animation:pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:0.72;}
+  }
+
+  /* small icon version used as section markers */
+  .matrix-icon{
+    width:34px; height:34px;
+    grid-template-columns:repeat(8,1fr);
+    gap:1.5px;
+    flex:none;
+  }
+  .matrix-icon .led, .matrix-icon .cell{border-radius:1px;}
+
+  .module-head-row{display:flex; align-items:center; gap:14px; margin-bottom:6px;}
+
+  /* ---------- sections ---------- */
+  section{padding:64px 0;}
+  .divider-line{
+    border:none; height:1px;
+    background:repeating-linear-gradient(90deg, var(--line) 0 6px, transparent 6px 12px);
+    margin:0;
+  }
+  h2{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:clamp(24px, 3.4vw, 32px);
+    font-weight:700;
+    margin:0 0 20px;
+    letter-spacing:-0.01em;
+  }
+  h3{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:18px;
+    font-weight:600;
+    margin:28px 0 10px;
+  }
+  p{margin:0 0 16px; color:var(--text-primary);}
+  section > .wrap > p.section-intro{
+    color:var(--text-muted);
+    max-width:66ch;
+    font-size:16px;
+  }
+
+  /* parts list */
+  .parts-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    margin:28px 0 8px;
+  }
+  .part{
+    background:var(--bg-panel);
+    padding:18px 20px;
+  }
+  .part .part-name{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+    color:var(--text-primary);
+    margin-bottom:6px;
+  }
+  .part .part-desc{font-size:13px; color:var(--text-muted); line-height:1.5;}
+
+  figure{margin:28px 0;}
+  figure img{
+    border-radius:6px;
+    border:1px solid var(--line);
+  }
+  figcaption{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-dim);
+    margin-top:10px;
+    text-align:center;
+  }
+
+  /* video */
+  .video-frame{
+    position:relative; width:100%; padding-top:56.25%;
+    border-radius:6px; overflow:hidden;
+    border:1px solid var(--line);
+    background:#000;
+    margin:8px 0 8px;
+  }
+  .video-frame iframe{
+    position:absolute; inset:0; width:100%; height:100%; border:0;
+  }
+  .video-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--text-dim);
+    margin:10px 0 32px;
+  }
+
+  ul.feature-list{margin:0 0 20px; padding-left:0; list-style:none;}
+  ul.feature-list li{
+    position:relative;
+    padding-left:20px;
+    margin-bottom:12px;
+    color:var(--text-primary);
+    font-size:15px;
+  }
+  ul.feature-list li::before{
+    content:"›";
+    position:absolute; left:0; top:0;
+    color:var(--copper);
+    font-weight:700;
+  }
+  ul.feature-list li strong{color:var(--text-primary); font-weight:600;}
+
+  .callout{
+    border-left:2px solid var(--copper);
+    background:var(--bg-panel);
+    padding:16px 20px;
+    border-radius:0 6px 6px 0;
+    margin:24px 0;
+  }
+  .callout .callout-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--copper);
+    display:block;
+    margin-bottom:8px;
+  }
+  .callout p:last-child{margin-bottom:0;}
+  .callout ul{margin:0; padding-left:18px;}
+  .callout li{margin-bottom:10px; font-size:14.5px; color:var(--text-muted);}
+  .callout li:last-child{margin-bottom:0;}
+  .callout li strong{color:var(--text-primary);}
+
+  /* photo gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px;
+    margin:28px 0;
+  }
+  .gallery figure{margin:0;}
+  .gallery button.thumb{
+    all:unset;
+    cursor:zoom-in;
+    display:block;
+    width:100%;
+    border-radius:6px;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .gallery button.thumb img{
+    border-radius:0; border:0;
+    aspect-ratio:4/3.2;
+    object-fit:cover;
+    width:100%;
+    transition:transform .3s ease;
+  }
+  .gallery button.thumb:hover img{transform:scale(1.035);}
+  .gallery figcaption{text-align:left; margin-top:8px;}
+
+  /* lightbox */
+  .lightbox{
+    position:fixed; inset:0; z-index:100;
+    background:rgba(6,9,7,0.92);
+    display:none;
+    align-items:center; justify-content:center;
+    padding:40px 20px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-height:88vh; max-width:100%; border-radius:6px; border:1px solid var(--line);}
+  .lightbox-close{
+    position:absolute; top:20px; right:24px;
+    font-family:'IBM Plex Mono', monospace;
+    background:none; border:1px solid var(--line);
+    color:var(--text-primary);
+    width:38px; height:38px; border-radius:50%;
+    cursor:pointer; font-size:16px;
+  }
+  .lightbox-close:hover{border-color:var(--copper);}
+
+  /* reflection */
+  .reflection-body{max-width:70ch;}
+  .reflection-body p{color:var(--text-muted); font-size:16px;}
+  .reflection-body strong{color:var(--text-primary);}
+
+  footer{
+    border-top:1px solid var(--line-soft);
+    padding:36px 0 56px;
+  }
+  .footer-row{
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:16px;
+  }
+  .footer-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-dim);
+  }
+  .footer-back{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    text-decoration:none;
+    color:var(--text-muted);
+    border:1px solid var(--line);
+    padding:9px 16px;
+    border-radius:20px;
+  }
+  .footer-back:hover{color:var(--text-primary); border-color:var(--copper);}
+
+  @media (max-width:640px){
+    .gallery{grid-template-columns:1fr;}
+    .board-demo{padding:20px;}
+    .matrix{width:140px; height:140px;}
+    .hero{padding:44px 0 32px;}
+    section{padding:44px 0;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a class="back-link" href="/projects.html">&larr; Back to projects</a>
+    <div class="subnav">
+      <a href="#hardware">Hardware</a>
+      <a href="#tictactoe">Tic-Tac-Toe</a>
+      <a href="#checkers">Checkers</a>
+      <a href="#reflection">What I Learned</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">CS122A &middot; Intermediate Embedded Systems</p>
+    <h1>Tic-Tac-Toe &amp; Checkers, Wired by Hand</h1>
+    <p class="lede">Two turn-based games running on one Arduino Mega — no display library shortcuts, no game engine. Every LED, every keypress, and every AI move is driven by code written from scratch.</p>
+    <div class="tagrow">
+      <span class="tag">Arduino Mega</span>
+      <span class="tag">C++</span>
+      <span class="tag">WS2812 LED Matrix</span>
+      <span class="tag">16&times;2 LCD</span>
+      <span class="tag">4&times;4 Keypad</span>
+      <span class="tag">Minimax AI</span>
+    </div>
+
+    <div class="board-demo">
+      <div class="board-demo-item">
+        <div class="matrix pulse" aria-hidden="true">
+          <i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i>
+        </div>
+        <span class="cap">tic-tac-toe &mdash; X wins on the diagonal</span>
+      </div>
+      <div class="board-demo-item">
+        <div class="matrix pulse" aria-hidden="true">
+          <i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i>
+        </div>
+        <span class="cap">checkers &mdash; opening position</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<hr class="divider-line">
+
+<section id="hardware">
+  <div class="wrap">
+    <p class="eyebrow">The Rig</p>
+    <h2>One Board, Two Games</h2>
+    <p class="section-intro">Both games run on the exact same physical setup. I built the checkers board right after finishing tic-tac-toe and reused the wiring rather than starting over. An Arduino Mega reads button presses from a membrane keypad, prints game status to a character LCD, and drives a grid of individually-addressable RGB LEDs that stands in for the board itself.</p>
+
+    <div class="parts-grid">
+      <div class="part">
+        <div class="part-name">Arduino Mega 2560</div>
+        <div class="part-desc">Main controller — runs the game logic and drives every peripheral below.</div>
+      </div>
+      <div class="part">
+        <div class="part-name">8&times;8 WS2812 RGB LED Matrix</div>
+        <div class="part-desc">The board itself: 64 individually addressable pixels, wired in a serpentine (zig-zag) pattern.</div>
+      </div>
+      <div class="part">
+        <div class="part-name">16&times;2 Character LCD</div>
+        <div class="part-desc">Status line — whose turn it is, current mode, win and draw messages.</div>
+      </div>
+      <div class="part">
+        <div class="part-name">4&times;4 Switch Membrane Keypad</div>
+        <div class="part-desc">All player input. No joystick, no touchscreen — every move is a keypress.</div>
+      </div>
+      <div class="part">
+        <div class="part-name">Breadboard &amp; jumper wires</div>
+        <div class="part-desc">Fully breadboarded, no custom PCB — the same rig for both projects.</div>
+      </div>
+    </div>
+
+    <figure>
+      <img src="images/connection-diagram.jpg" alt="Fritzing wiring diagram showing the Arduino Mega connected to a 4x4 membrane keypad, a 16x2 LCD, and an 8x8 WS2812 LED matrix via a breadboard.">
+      <figcaption>Wiring diagram — identical for both games</figcaption>
+    </figure>
+  </div>
+</section>
+
+<hr class="divider-line">
+
+<section id="tictactoe">
+  <div class="wrap">
+    <div class="module-head-row">
+      <div class="matrix matrix-icon" aria-hidden="true">
+        <i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i>
+      </div>
+      <p class="eyebrow" style="margin:0;">Module 01</p>
+    </div>
+    <h2>Tic-Tac-Toe</h2>
+    <p class="section-intro">Classic 3-in-a-row, playable two-player or against the CPU. Since the LED matrix is 8&times;8 and a tic-tac-toe board is 3&times;3, each cell became a 2&times;2 block of LEDs, with a full row and column sacrificed as a yellow grid line between cells — visible in the recreation above.</p>
+
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/Pk7ccf08vmk" title="Tic-Tac-Toe on Arduino demo video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p class="video-label">Demo video &mdash; player vs player and player vs CPU</p>
+
+    <h3>How it plays</h3>
+    <ul class="feature-list">
+      <li><strong>Two-player mode</strong> — keypad digits 1&ndash;9 map directly onto the 3&times;3 grid. The game blocks moves on an occupied square and checks all eight win lines after every turn.</li>
+      <li><strong>Player vs CPU, easy</strong> — the CPU plays randomly for its first couple of moves, which is enough to make it beatable most games.</li>
+      <li><strong>Player vs CPU, hard</strong> — a full minimax search runs every turn. It plays optimally and is essentially unbeatable, so I added a short "thinking" pause before its move to make it feel less instantaneous.</li>
+    </ul>
+
+    <figure>
+      <img src="images/ttt-state-machine.png" alt="State machine diagram with five states: INIT, MODE SELECT, PVP MODE, PVC MODE, and DISPLAY WINNER, with transitions between them.">
+      <figcaption>Game loop as a state machine — 5 states, ticked every 500ms</figcaption>
+    </figure>
+
+    <h3>In action</h3>
+    <div class="gallery">
+      <figure>
+        <button class="thumb" data-full="images/ttt-photo-1.jpg" aria-label="Enlarge photo: mode select screen">
+          <img src="images/ttt-photo-1.jpg" alt="Arduino setup showing the LCD mode-select screen (Player vs Player or Player vs CPU) with the LED matrix lit blank beside it.">
+        </button>
+        <figcaption>Mode select — 2-player or vs CPU</figcaption>
+      </figure>
+      <figure>
+        <button class="thumb" data-full="images/ttt-photo-2.jpg" aria-label="Enlarge photo: winning screen">
+          <img src="images/ttt-photo-2.jpg" alt="LED matrix and LCD showing a completed game with a winner announced, matrix lit in red and green.">
+        </button>
+        <figcaption>Winning screen — board lights up the winner's color</figcaption>
+      </figure>
+      <figure>
+        <button class="thumb" data-full="images/ttt-photo-3.jpg" aria-label="Enlarge photo: difficulty select screen">
+          <img src="images/ttt-photo-3.jpg" alt="LCD screen showing the CPU difficulty selection, easy or hard.">
+        </button>
+        <figcaption>Difficulty select for CPU mode</figcaption>
+      </figure>
+      <figure>
+        <button class="thumb" data-full="images/ttt-photo-4.jpg" aria-label="Enlarge photo: ready to start screen">
+          <img src="images/ttt-photo-4.jpg" alt="LCD prompting the player to press 0 to start the match, after mode and difficulty have been chosen.">
+        </button>
+        <figcaption>Ready to start, after mode + difficulty are set</figcaption>
+      </figure>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">Challenges &amp; trade-offs</span>
+      <ul>
+        <li><strong>8&times;8 doesn't split evenly into 3.</strong> A 2&times;2-per-cell layout was the best fit available on hardware I already had — a 9&times;9 or 12&times;12 matrix would have allowed real X/O shapes instead of plain color blocks.</li>
+        <li><strong>Memory was tight.</strong> The Mega's limited RAM meant the hard-mode minimax search had to stay lean, with no elaborate move caching.</li>
+        <li><strong>Blocking delays break a state machine.</strong> Giving the AI a "thinking" pause without freezing everything else meant swapping Arduino's <code>delay()</code> for a manual elapsed-time check in the main loop.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider-line">
+
+<section id="checkers">
+  <div class="wrap">
+    <div class="module-head-row">
+      <div class="matrix matrix-icon" aria-hidden="true">
+        <i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i>
+      </div>
+      <p class="eyebrow" style="margin:0;">Module 02</p>
+    </div>
+    <h2>Checkers</h2>
+    <p class="section-intro">Full 8&times;8 checkers, this time using the LED matrix at its native resolution — no compromise layout needed. Pieces move diagonally, capture by jumping an opponent, and promote to "kings" on reaching the far row.</p>
+
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/MfjVNr8zxWw" title="Checkers on Arduino demo video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p class="video-label">Demo video &mdash; player vs player and player vs CPU</p>
+
+    <h3>How it plays</h3>
+    <ul class="feature-list">
+      <li><strong>A real 2D board.</strong> Tic-tac-toe's board was small enough to give each square its own named field. Checkers' 64 squares needed a proper 2D array instead.</li>
+      <li><strong>Coordinate-based moves.</strong> Rather than cycling through squares, a player types the coordinates of the piece to move, then the destination — both echoed live on the LCD.</li>
+      <li><strong>Kings &amp; highlights.</strong> Kings get a distinct LED shade, and the currently selected piece and its legal moves light up in a lighter tone before you confirm.</li>
+    </ul>
+
+    <figure>
+      <img src="images/checkers-state-machine.png" alt="State machine diagram with five states: INIT, MODE SELECT, BLUE TURN, RED TURN, and DISP WIN, with transitions between them.">
+      <figcaption>Game loop as a state machine — turns alternate between BLUE_TURN and RED_TURN</figcaption>
+    </figure>
+
+    <h3>In action</h3>
+    <div class="gallery">
+      <figure>
+        <button class="thumb" data-full="images/checkers-photo-1.jpg" aria-label="Enlarge photo: full rig and mode select">
+          <img src="images/checkers-photo-1.jpg" alt="Full checkers rig showing keypad, LED matrix, breadboard and LCD at the mode-select screen.">
+        </button>
+        <figcaption>The full rig, at mode select</figcaption>
+      </figure>
+      <figure>
+        <button class="thumb" data-full="images/checkers-photo-2.jpg" aria-label="Enlarge photo: new game in player vs player mode">
+          <img src="images/checkers-photo-2.jpg" alt="LED matrix showing a fresh checkers game in player vs player mode, red and blue pieces in starting position.">
+        </button>
+        <figcaption>A fresh game, player vs player</figcaption>
+      </figure>
+      <figure>
+        <button class="thumb" data-full="images/checkers-photo-3.jpg" aria-label="Enlarge photo: new game in player vs CPU mode">
+          <img src="images/checkers-photo-3.jpg" alt="LED matrix showing a fresh checkers game in player vs CPU mode.">
+        </button>
+        <figcaption>A fresh game, player vs CPU</figcaption>
+      </figure>
+      <figure>
+        <button class="thumb" data-full="images/checkers-photo-4.jpg" aria-label="Enlarge photo: game in progress with score on LCD">
+          <img src="images/checkers-photo-4.jpg" alt="LED matrix mid-game with pieces captured on both sides, LCD tracking each player's score.">
+        </button>
+        <figcaption>Mid-game &mdash; LCD tracks each player's score</figcaption>
+      </figure>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">Challenges &amp; trade-offs</span>
+      <ul>
+        <li><strong>The LED strip isn't wired in reading order.</strong> It's a single strip snaking back and forth, so each row runs the opposite direction from the last. Mapping 2D board coordinates onto that layout took real trial and error.</li>
+        <li><strong>Minimax didn't survive contact with an 8&times;8 board.</strong> I'd planned a minimax search with alpha-beta pruning for the CPU, same idea as tic-tac-toe's hard mode. But checkers' search tree is far bigger, and the Mega couldn't recurse deep enough in reasonable time. I shipped a simpler move-scanning heuristic instead — a straightforward trade-off between the ideal algorithm and what the hardware could actually do.</li>
+        <li><strong>Joystick input didn't make the cut.</strong> I'd originally planned a joystick for cycling through pieces, but flaky analog readings and thin library support pushed me back to the keypad.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider-line">
+
+<section id="reflection">
+  <div class="wrap">
+    <p class="eyebrow">Looking Back</p>
+    <h2>What Building Two Games Taught Me</h2>
+    <div class="reflection-body">
+      <p>Structuring both games as explicit state machines made a real difference — with no operating system underneath to lean on, having named states and clear transitions kept the game loop predictable instead of turning into a tangle of flags. It's the same reason I split each project's code into separate header files once a single <code>.ino</code> stopped being manageable.</p>
+      <p>The bigger lesson was the gap between an algorithm on paper and what a microcontroller can actually run in real time. Minimax worked cleanly for tic-tac-toe's small search space; the same approach hit a wall on checkers' much larger board, and knowing when to trade optimality for something that actually runs on the hardware turned out to be as important as the algorithm itself.</p>
+      <p>And underneath both projects was a lot of low-level peripheral work I'd never had to think about before: scanning a matrix keypad, addressing LEDs individually over a single data line, driving an LCD over a 4-bit parallel interface. None of it is hard in isolation, but getting all of it talking to one Arduino Mega at once, on a shared 500ms tick, is where the real debugging happened.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span class="footer-note">Coursework project &middot; CS122A, Intermediate Embedded Systems</span>
+    <a class="footer-back" href="/projects.html">&larr; Back to all projects</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+  (function(){
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var closeBtn = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.thumb').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var full = btn.getAttribute('data-full');
+        var alt = btn.querySelector('img').getAttribute('alt');
+        lightboxImg.src = full;
+        lightboxImg.alt = alt;
+        lightbox.classList.add('open');
+      });
+    });
+
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+    }
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function(e){
+      if(e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeLightbox();
+    });
+  })();
+</script>
+
+</body>
+</html>
