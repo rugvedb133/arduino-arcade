@@ -102,25 +102,34 @@
   }
 
   /* ---------- top nav ---------- */
+  /* ---------- (scrolls away normally) ---------- */
   .topnav{
-    position:sticky; top:0; z-index:40;
-    background:rgba(10,15,12,0.88);
-    backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line-soft);
   }
   .topnav-inner{
     max-width:var(--maxw); margin:0 auto; padding:14px 24px;
-    display:flex; align-items:center; justify-content:space-between;
-    gap:16px; flex-wrap:wrap;
   }
   .back-link{
     font-family:'IBM Plex Mono', monospace;
     font-size:13px;
     color:var(--text-muted);
     text-decoration:none;
-    display:flex; align-items:center; gap:6px;
+    display:inline-flex; align-items:center; gap:6px;
   }
   .back-link:hover{color:var(--copper-bright);}
+
+  /* ---------- sticky section nav ---------- */
+  .subnav-bar{
+    position:sticky; top:0; z-index:40;
+    background:rgba(10,15,12,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .subnav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:12px 24px;
+    display:flex; align-items:center;
+    gap:8px; flex-wrap:wrap;
+  }
   .subnav{display:flex; gap:4px; flex-wrap:wrap;}
   .subnav a{
     font-family:'IBM Plex Mono', monospace;
@@ -143,12 +152,11 @@
     line-height:1.12;
     letter-spacing:-0.01em;
     margin:0 0 20px;
-    max-width:14ch;
+    max-width:24ch;
   }
   .hero .lede{
     font-size:17px;
     color:var(--text-muted);
-    max-width:56ch;
     margin:0 0 28px;
   }
   .tagrow{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:48px;}
@@ -164,7 +172,7 @@
 
   /* ---------- LED matrix motif ---------- */
   .board-demo{
-    display:flex; gap:36px; flex-wrap:wrap; align-items:flex-end;
+    display:flex; gap:36px; flex-wrap:wrap; align-items:flex-end; justify-content: space-around;
     padding:28px; border:1px solid var(--line); border-radius:6px;
     background:linear-gradient(180deg, var(--bg-panel), var(--bg-void));
   }
@@ -251,7 +259,6 @@
   p{margin:0 0 16px; color:var(--text-primary);}
   section > .wrap > p.section-intro{
     color:var(--text-muted);
-    max-width:66ch;
     font-size:16px;
   }
 
@@ -281,6 +288,7 @@
   figure img{
     border-radius:6px;
     border:1px solid var(--line);
+    margin-inline: auto;
   }
   figcaption{
     font-family:'IBM Plex Mono', monospace;
@@ -394,7 +402,6 @@
   .lightbox-close:hover{border-color:var(--copper);}
 
   /* reflection */
-  .reflection-body{max-width:70ch;}
   .reflection-body p{color:var(--text-muted); font-size:16px;}
   .reflection-body strong{color:var(--text-primary);}
 
@@ -436,6 +443,11 @@
 <nav class="topnav">
   <div class="topnav-inner">
     <a class="back-link" href="/projects.html">&larr; Back to projects</a>
+  </div>
+</nav>
+
+<nav class="subnav-bar">
+  <div class="subnav-inner">
     <div class="subnav">
       <a href="#hardware">Hardware</a>
       <a href="#tictactoe">Tic-Tac-Toe</a>
