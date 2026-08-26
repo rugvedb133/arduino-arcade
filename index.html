@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Board Games on Arduino — Tic-Tac-Toe &amp; Checkers</title>
-<meta name="description" content="A hand-wired Arduino Mega project: tic-tac-toe and checkers played on an 8x8 LED matrix, with a minimax AI opponent.">
+<title>Arduino Matrix Arcade</title>
+<meta name="description" content="A hand-wired Arduino Mega project: Tic-Tac-Toe and Checkers played on an 8x8 LED matrix, with a minimax AI opponent.">
 
 <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any">
 <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
@@ -47,7 +47,7 @@
     --led-blue:#5b9dff;
     --led-amber:#e8b23d;
     --sq-white:#28332c;
-    --sq-black:#0c1210;
+    --sq-black:#1a2119;
     --radius:3px;
     --maxw:1080px;
   }
@@ -189,8 +189,8 @@
   }
   .matrix .led.blank{background:#242e28;}
   .matrix .led.border{
-    background:var(--led-amber);
-    box-shadow:0 0 6px rgba(232,178,61,0.65);
+    background:rgba(from var(--led-amber) r g b / 0.8);
+    /* box-shadow:0 0 6px rgba(232,178,61,0.65); */
   }
   .matrix .led.x{
     background:var(--led-red);
@@ -379,7 +379,7 @@
     transition:transform .3s ease;
   }
   .gallery button.thumb:hover img{transform:scale(1.035);}
-  .gallery figcaption{text-align:left; margin-top:8px;}
+  .gallery figcaption{margin-top:8px;}
 
   /* lightbox */
   .lightbox{
@@ -459,15 +459,15 @@
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">CS122A &middot; Intermediate Embedded Systems</p>
+    <p class="eyebrow">ARDUINO ARCADE</p>
     <h1>Tic-Tac-Toe &amp; Checkers, Wired by Hand</h1>
     <p class="lede">Two turn-based games running on one Arduino Mega — no display library shortcuts, no game engine. Every LED, every keypress, and every AI move is driven by code written from scratch.</p>
     <div class="tagrow">
-      <span class="tag">Arduino Mega</span>
+      <span class="tag">Arduino Mega 2560 R3</span>
       <span class="tag">C++</span>
       <span class="tag">WS2812 LED Matrix</span>
-      <span class="tag">16&times;2 LCD</span>
-      <span class="tag">4&times;4 Keypad</span>
+      <span class="tag">I2C 16&times;2 LCD</span>
+      <span class="tag">4&times;4 Membrane Keypad</span>
       <span class="tag">Minimax AI</span>
     </div>
 
@@ -480,7 +480,7 @@
       </div>
       <div class="board-demo-item">
         <div class="matrix pulse" aria-hidden="true">
-          <i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i>
+          <i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell red"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i>
         </div>
         <span class="cap">checkers &mdash; opening position</span>
       </div>
@@ -514,8 +514,12 @@
         <div class="part-desc">All player input. No joystick, no touchscreen — every move is a keypress.</div>
       </div>
       <div class="part">
-        <div class="part-name">Breadboard &amp; jumper wires</div>
+        <div class="part-name">Breadboard</div>
         <div class="part-desc">Fully breadboarded, no custom PCB — the same rig for both projects.</div>
+      </div>
+      <div class="part">
+        <div class="part-name">Jumper wires</div>
+        <div class="part-desc">Hand-wired point-to-point connections between every peripheral and the Mega.</div>
       </div>
     </div>
 
@@ -537,12 +541,12 @@
       <p class="eyebrow" style="margin:0;">Module 01</p>
     </div>
     <h2>Tic-Tac-Toe</h2>
-    <p class="section-intro">Classic 3-in-a-row, playable two-player or against the CPU. Since the LED matrix is 8&times;8 and a tic-tac-toe board is 3&times;3, each cell became a 2&times;2 block of LEDs, with a full row and column sacrificed as a yellow grid line between cells — visible in the recreation above.</p>
+    <p class="section-intro">Classic 3-in-a-row, playable two-player or against the CPU. Since the LED matrix is 8&times;8 and a tic-tac-toe board is 3&times;3, each cell became a 2&times;2 block of LEDs, with a full row and column as a yellow grid line between cells — visible in the recreation above.</p>
 
-    <div class="video-frame">
+    <figure class="video-frame">
       <iframe src="https://www.youtube.com/embed/Pk7ccf08vmk" title="Tic-Tac-Toe on Arduino demo video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <p class="video-label">Demo video &mdash; player vs player and player vs CPU</p>
+    </figure>
+    <figcaption class="video-label">Demo video &mdash; player vs player and player vs CPU</figcaption>
 
     <h3>How it plays</h3>
     <ul class="feature-list">
@@ -587,7 +591,7 @@
     <div class="callout">
       <span class="callout-label">Challenges &amp; trade-offs</span>
       <ul>
-        <li><strong>8&times;8 doesn't split evenly into 3.</strong> A 2&times;2-per-cell layout was the best fit available on hardware I already had — a 9&times;9 or 12&times;12 matrix would have allowed real X/O shapes instead of plain color blocks.</li>
+        <li><strong>8&times;8 doesn't split evenly into 3.</strong> While a 9&times;9 or 12&times;12 matrix would have allowed real X/O shapes, a 2&times;2-per-cell layout was the best fit available on hardware I already had — I decided to go with plain color blocks and sacrifice a full row and column in between cells as borders.</li>
         <li><strong>Memory was tight.</strong> The Mega's limited RAM meant the hard-mode minimax search had to stay lean, with no elaborate move caching.</li>
         <li><strong>Blocking delays break a state machine.</strong> Giving the AI a "thinking" pause without freezing everything else meant swapping Arduino's <code>delay()</code> for a manual elapsed-time check in the main loop.</li>
       </ul>
@@ -608,10 +612,10 @@
     <h2>Checkers</h2>
     <p class="section-intro">Full 8&times;8 checkers, this time using the LED matrix at its native resolution — no compromise layout needed. Pieces move diagonally, capture by jumping an opponent, and promote to "kings" on reaching the far row.</p>
 
-    <div class="video-frame">
+    <figure class="video-frame">
       <iframe src="https://www.youtube.com/embed/MfjVNr8zxWw" title="Checkers on Arduino demo video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <p class="video-label">Demo video &mdash; player vs player and player vs CPU</p>
+    </figure>
+    <figcaption class="video-label">Demo video &mdash; player vs player and player vs CPU</figcaption>
 
     <h3>How it plays</h3>
     <ul class="feature-list">
@@ -658,7 +662,7 @@
       <ul>
         <li><strong>The LED strip isn't wired in reading order.</strong> It's a single strip snaking back and forth, so each row runs the opposite direction from the last. Mapping 2D board coordinates onto that layout took real trial and error.</li>
         <li><strong>Minimax didn't survive contact with an 8&times;8 board.</strong> I'd planned a minimax search with alpha-beta pruning for the CPU, same idea as tic-tac-toe's hard mode. But checkers' search tree is far bigger, and the Mega couldn't recurse deep enough in reasonable time. I shipped a simpler move-scanning heuristic instead — a straightforward trade-off between the ideal algorithm and what the hardware could actually do.</li>
-        <li><strong>Joystick input didn't make the cut.</strong> I'd originally planned a joystick for cycling through pieces, but flaky analog readings and thin library support pushed me back to the keypad.</li>
+        <li><strong>Joystick input didn't make the cut.</strong> I'd originally planned a joystick for cycling through pieces, but flaky analog readings and thin library support compounded with project deadlines pushed me back to the keypad.</li>
       </ul>
     </div>
   </div>
