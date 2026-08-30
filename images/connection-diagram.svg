@@ -7073,18 +7073,18 @@
     <path stroke="#000" stroke-width=".189" d="M812.538 404.154h3.024" opacity=".4"/>
     <path stroke="#fff" stroke-width=".189" d="M812.538 398.3h3.024" opacity=".4"/>
   </g>
-  <g id="lcd_power_cables" stroke-linecap="round" stroke-width="4.267">
+  <g id="lcd_power_cables" stroke-linecap="round" stroke-width="4.267" stroke-linejoin="round">
     <path stroke="#8c0000" d="m445.73 542.306.016-38.197-144.034-.199"/>
     <path stroke="#00a527" d="M291.786 494.345H455.51l-.182 57.561"/>
     <path stroke="#8c0000" d="m157.713 503.905-57.439.204-.408 162.8H464.81l.117-124.603"/>
     <path stroke="#00a527" d="m474.53 551.906.145 124.867H90.619l-.109-182.428 76.803-.039"/>
     <path stroke="#8c0000" d="m484.128 542.306-.206 143.713H80.756l-.01-201.437 115.367.124"/>
   </g>
-  <g id="arduino_power_cables" stroke-linecap="round" stroke-width="4.267">
+  <g id="arduino_power_cables" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.267">
     <path stroke="#00a527" d="m474.514 158.312-.228-143.874 556.634-.458v576.551H657.243l-.315-38.625"/>
     <path stroke="#8c0000" d="M209.553 158.312v-19.203H70.983l.172 230.339 86.576.058"/>
   </g>
-  <g id="keypad_cables" stroke-linecap="round" stroke-width="4.267">
+  <g id="keypad_cables" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.267">
     <path stroke="#dc00dc" d="M704.643 350.148H512.588v-76.606l-38.074-.03M705 350V187"/>
     <path stroke="#7a3a73" d="M695.328 340.385H522.351V263.78l-47.837.132M696.096 188 696 340.09"/>
     <path stroke="#6c2710" d="M685.564 331.372H532.115v-77.356l-57.601.296M687 187l-.503 144.002"/>
@@ -7094,12 +7094,12 @@
     <path stroke="#d6d63a" d="m474.514 215.912 95.904-.198v77.355h76.395m-.313-106.071v106.004"/>
     <path stroke="#1b5bb3" d="m474.514 206.312 105.666-.362v77.356h56.871M637 187v96"/>
   </g>
-  <g id="ledmatrix_cables" stroke-linecap="round" stroke-width="4.267">
+  <g id="ledmatrix_cables" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.267">
     <path stroke="#00D4FF" d="m474.514 167.912 9.534-.264V24.202H762.68l-3.243 305.3"/>
     <path stroke="#00a527" d="m685.727 551.906.126 29.089h335.527V254.138l-249.655.311-2.689 75.053"/>
     <path stroke="#8c0000" d="m695.328 542.306.056 28.529h316.386V263.893H781.957l-3.322 65.609"/>
   </g>
-  <g id="lcd_control_cables" stroke-linecap="round" stroke-width="4.267">
+  <g id="lcd_control_cables" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.267">
     <path stroke="#d6d63a" d="M238.353 158.312v-29.021H61.618v278.305l115.295.31"/>
     <path stroke="#ad6a38" d="M247.953 158.312v-38.558H52.081v297.379l134.432.373"/>
     <path stroke="#846521" d="M267 158v-48H42.544v317.537l163.169-.431"/>

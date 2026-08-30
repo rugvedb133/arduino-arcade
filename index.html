@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arduino Matrix Arcade</title>
+<title>Arduino Arcade</title>
 <meta name="description" content="A hand-wired Arduino Mega project: Tic-Tac-Toe and Checkers played on an 8x8 LED matrix, with a minimax AI opponent.">
 
 <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any">
@@ -101,8 +101,7 @@
     display:inline-block;
   }
 
-  /* ---------- top nav ---------- */
-  /* ---------- (scrolls away normally) ---------- */
+  /* ---------- top bar (scrolls away normally) ---------- */
   .topnav{
     border-bottom:1px solid var(--line-soft);
   }
@@ -190,7 +189,6 @@
   .matrix .led.blank{background:#242e28;}
   .matrix .led.border{
     background:rgba(from var(--led-amber) r g b / 0.8);
-    /* box-shadow:0 0 6px rgba(232,178,61,0.65); */
   }
   .matrix .led.x{
     background:var(--led-red);
@@ -264,7 +262,7 @@
 
   /* parts list */
   .parts-grid{
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
     gap:1px;
     background:var(--line);
     border:1px solid var(--line);
@@ -289,6 +287,19 @@
     border-radius:6px;
     border:1px solid var(--line);
     margin-inline: auto;
+  }
+  .diagram-thumb{
+    all:unset;
+    cursor:zoom-in;
+    display:block;
+    width:100%;
+  }
+  .diagram-thumb img{display:block; width:100%;}
+  .diagram-thumb:hover img{opacity:0.88;}
+  .diagram-thumb:focus-visible{
+    outline:2px solid var(--led-amber);
+    outline-offset:3px;
+    border-radius:6px;
   }
   figcaption{
     font-family:'IBM Plex Mono', monospace;
@@ -334,9 +345,7 @@
 
   .callout{
     border-left:2px solid var(--copper);
-    background:var(--bg-panel);
     padding:16px 20px;
-    border-radius:0 6px 6px 0;
     margin:24px 0;
   }
   .callout .callout-label{
@@ -349,8 +358,15 @@
     margin-bottom:8px;
   }
   .callout p:last-child{margin-bottom:0;}
-  .callout ul{margin:0; padding-left:18px;}
+  .callout ul{margin:0; padding-left:0; list-style:none;}
   .callout li{margin-bottom:10px; font-size:14.5px; color:var(--text-muted);}
+  .callout li{position:relative; padding-left:20px;}
+  .callout li::before{
+    content:"›";
+    position:absolute; left:0; top:0;
+    color:var(--copper);
+    font-weight:700;
+  }
   .callout li:last-child{margin-bottom:0;}
   .callout li strong{color:var(--text-primary);}
 
@@ -383,14 +399,18 @@
 
   /* lightbox */
   .lightbox{
-    position:fixed; inset:0; z-index:100;
+    position:fixed; inset:0;
+    width:100%; height:100%;
+    max-width:100%; max-height:100%;
+    border:none; margin:0;
     background:rgba(6,9,7,0.92);
     display:none;
     align-items:center; justify-content:center;
     padding:40px 20px;
   }
-  .lightbox.open{display:flex;}
+  .lightbox[open]{display:flex;}
   .lightbox img{max-height:88vh; max-width:100%; border-radius:6px; border:1px solid var(--line);}
+  .lightbox img{background:rgba(6,9,7,0.5); backdrop-filter: blur(10px);}
   .lightbox-close{
     position:absolute; top:20px; right:24px;
     font-family:'IBM Plex Mono', monospace;
@@ -399,6 +419,7 @@
     width:38px; height:38px; border-radius:50%;
     cursor:pointer; font-size:16px;
   }
+  .lightbox::backdrop{background:transparent;backdrop-filter:blur(4px)}
   .lightbox-close:hover{border-color:var(--copper);}
 
   /* reflection */
@@ -432,7 +453,7 @@
   @media (max-width:640px){
     .gallery{grid-template-columns:1fr;}
     .board-demo{padding:20px;}
-    .matrix{width:140px; height:140px;}
+    .board-demo .matrix{width:140px; height:140px;}
     .hero{padding:44px 0 32px;}
     section{padding:44px 0;}
   }
@@ -515,7 +536,7 @@
       </div>
       <div class="part">
         <div class="part-name">Breadboard</div>
-        <div class="part-desc">Fully breadboarded, no custom PCB — the same rig for both projects.</div>
+        <div class="part-desc">Fully breadboarded, no custom PCB — the same board for both projects.</div>
       </div>
       <div class="part">
         <div class="part-name">Jumper wires</div>
@@ -524,7 +545,9 @@
     </div>
 
     <figure>
+      <button class="thumb diagram-thumb" data-full="images/connection-diagram.svg" aria-label="Enlarge wiring diagram">
       <img src="images/connection-diagram.svg" alt="Fritzing wiring diagram showing the Arduino Mega connected to a 4x4 membrane keypad, a 16x2 LCD, and an 8x8 WS2812 LED matrix via a breadboard.">
+      </button>
       <figcaption>Wiring diagram — identical for both games</figcaption>
     </figure>
   </div>
@@ -556,7 +579,9 @@
     </ul>
 
     <figure>
+      <button class="thumb diagram-thumb" data-full="images/ttt-state-machine.svg" aria-label="Enlarge state machine diagram">
       <img src="images/ttt-state-machine.svg" alt="State machine diagram with five states: INIT, MODE SELECT, PVP MODE, PVC MODE, and DISPLAY WINNER, with transitions between them.">
+      </button>
       <figcaption>Game loop as a state machine — 5 states, ticked every 500ms</figcaption>
     </figure>
 
@@ -625,7 +650,9 @@
     </ul>
 
     <figure>
+      <button class="thumb diagram-thumb" data-full="images/checkers-state-machine.svg" aria-label="Enlarge state machine diagram">
       <img src="images/checkers-state-machine.svg" alt="State machine diagram with five states: INIT, MODE SELECT, BLUE TURN, RED TURN, and DISP WIN, with transitions between them.">
+      </button>
       <figcaption>Game loop as a state machine — turns alternate between BLUE_TURN and RED_TURN</figcaption>
     </figure>
 
@@ -689,10 +716,10 @@
   </div>
 </footer>
 
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+<dialog class="lightbox" id="lightbox" aria-label="Enlarged photo">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">&times;</button>
   <img id="lightboxImg" src="" alt="">
-</div>
+</dialog>
 
 <script>
   (function(){
@@ -706,20 +733,16 @@
         var alt = btn.querySelector('img').getAttribute('alt');
         lightboxImg.src = full;
         lightboxImg.alt = alt;
-        lightbox.classList.add('open');
+        lightbox.showModal();
       });
     });
 
-    function closeLightbox(){
-      lightbox.classList.remove('open');
-      lightboxImg.src = '';
-    }
-    closeBtn.addEventListener('click', closeLightbox);
+    closeBtn.addEventListener('click', function(){ lightbox.close(); });
     lightbox.addEventListener('click', function(e){
-      if(e.target === lightbox) closeLightbox();
+      if(e.target === lightbox) lightbox.close();
     });
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape') closeLightbox();
+    lightbox.addEventListener('close', function(){ // Fires on every close path — button, backdrop click, or native Escape handling.
+      lightboxImg.src = '';
     });
   })();
 </script>
