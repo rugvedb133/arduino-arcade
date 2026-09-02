@@ -42,12 +42,7 @@
     --text-dim:#5e6f66;
     --copper:#c9814a;
     --copper-bright:#e6a366;
-    --led-red:#ff5c5c;
-    --led-green:#52e08a;
-    --led-blue:#5b9dff;
     --led-amber:#e8b23d;
-    --sq-white:#28332c;
-    --sq-black:#1a2119;
     --radius:3px;
     --maxw:1080px;
   }
@@ -106,7 +101,7 @@
     border-bottom:1px solid var(--line-soft);
   }
   .topnav-inner{
-    max-width:var(--maxw); margin:0 auto; padding:14px 24px;
+    max-width:var(--maxw); margin:0 auto; padding:16px 24px;
   }
   .back-link{
     font-family:'IBM Plex Mono', monospace;
@@ -177,36 +172,8 @@
   }
   .board-demo-item{display:flex; flex-direction:column; align-items:center; gap:12px;}
   .matrix{
-    display:grid;
-    grid-template-columns:repeat(8, 1fr);
-    gap:3px;
+    display:block;
     width:176px; height:176px;
-  }
-  .matrix .led, .matrix .cell{
-    border-radius:2px;
-    background:#1a2119;
-  }
-  .matrix .led.blank{background:#242e28;}
-  .matrix .led.border{
-    background:rgba(from var(--led-amber) r g b / 0.8);
-  }
-  .matrix .led.x{
-    background:var(--led-red);
-    box-shadow:0 0 7px rgba(255,92,92,0.7);
-  }
-  .matrix .led.o{
-    background:var(--led-green);
-    box-shadow:0 0 7px rgba(82,224,138,0.7);
-  }
-  .matrix .cell.white{background:var(--sq-white);}
-  .matrix .cell.black{background:var(--sq-black);}
-  .matrix .cell.blue{
-    background:var(--led-blue);
-    box-shadow:0 0 7px rgba(91,157,255,0.7);
-  }
-  .matrix .cell.red{
-    background:var(--led-red);
-    box-shadow:0 0 7px rgba(255,92,92,0.7);
   }
   .board-demo-item .cap{
     font-family:'IBM Plex Mono', monospace;
@@ -214,23 +181,12 @@
     color:var(--text-dim);
     text-align:center;
   }
-  .matrix.pulse .led.x, .matrix.pulse .led.o,
-  .matrix.pulse .cell.blue, .matrix.pulse .cell.red{
-    animation:pulse 3.2s ease-in-out infinite;
-  }
-  @keyframes pulse{
-    0%,100%{opacity:1;}
-    50%{opacity:0.72;}
-  }
 
   /* small icon version used as section markers */
   .matrix-icon{
     width:34px; height:34px;
-    grid-template-columns:repeat(8,1fr);
-    gap:1.5px;
     flex:none;
   }
-  .matrix-icon .led, .matrix-icon .cell{border-radius:1px;}
 
   .module-head-row{display:flex; align-items:center; gap:14px; margin-bottom:6px;}
 
@@ -359,8 +315,13 @@
   }
   .callout p:last-child{margin-bottom:0;}
   .callout ul{margin:0; padding-left:0; list-style:none;}
-  .callout li{margin-bottom:10px; font-size:14.5px; color:var(--text-muted);}
-  .callout li{position:relative; padding-left:20px;}
+  .callout li{
+    margin-bottom:10px;
+    font-size:14.5px;
+    color:var(--text-muted);
+    position:relative;
+    padding-left:20px;
+  }
   .callout li::before{
     content:"›";
     position:absolute; left:0; top:0;
@@ -409,8 +370,7 @@
     padding:40px 20px;
   }
   .lightbox[open]{display:flex;}
-  .lightbox img{max-height:88vh; max-width:100%; border-radius:6px; border:1px solid var(--line);}
-  .lightbox img{background:rgba(6,9,7,0.5); backdrop-filter: blur(10px);}
+  .lightbox img{max-height:88vh; max-width:100%; border-radius:6px; border:1px solid var(--line); background:rgba(6,9,7,0.5); backdrop-filter: blur(10px);}
   .lightbox-close{
     position:absolute; top:20px; right:24px;
     font-family:'IBM Plex Mono', monospace;
@@ -494,15 +454,11 @@
 
     <div class="board-demo">
       <div class="board-demo-item">
-        <div class="matrix pulse" aria-hidden="true">
-          <i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i>
-        </div>
+        <img class="matrix" src="images/matrix-tictactoe.svg" alt="" aria-hidden="true">
         <span class="cap">tic-tac-toe &mdash; X wins on the diagonal</span>
       </div>
       <div class="board-demo-item">
-        <div class="matrix pulse" aria-hidden="true">
-          <i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell red"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i>
-        </div>
+        <img class="matrix" src="images/matrix-checkers.svg" alt="" aria-hidden="true">
         <span class="cap">checkers &mdash; opening position</span>
       </div>
     </div>
@@ -546,7 +502,7 @@
 
     <figure>
       <button class="thumb diagram-thumb" data-full="images/connection-diagram.svg" aria-label="Enlarge wiring diagram">
-      <img src="images/connection-diagram.svg" alt="Fritzing wiring diagram showing the Arduino Mega connected to a 4x4 membrane keypad, a 16x2 LCD, and an 8x8 WS2812 LED matrix via a breadboard.">
+        <img src="images/connection-diagram.svg" alt="Fritzing wiring diagram showing the Arduino Mega connected to a 4x4 membrane keypad, a 16x2 LCD, and an 8x8 WS2812 LED matrix via a breadboard.">
       </button>
       <figcaption>Wiring diagram — identical for both games</figcaption>
     </figure>
@@ -558,9 +514,7 @@
 <section id="tictactoe">
   <div class="wrap">
     <div class="module-head-row">
-      <div class="matrix matrix-icon" aria-hidden="true">
-        <i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led o"></i><i class="led o"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led blank"></i><i class="led blank"></i><i class="led border"></i><i class="led x"></i><i class="led x"></i>
-      </div>
+      <img class="matrix matrix-icon" src="images/matrix-tictactoe.svg" alt="" aria-hidden="true">
       <p class="eyebrow" style="margin:0;">Module 01</p>
     </div>
     <h2>Tic-Tac-Toe</h2>
@@ -580,7 +534,7 @@
 
     <figure>
       <button class="thumb diagram-thumb" data-full="images/ttt-state-machine.svg" aria-label="Enlarge state machine diagram">
-      <img src="images/ttt-state-machine.svg" alt="State machine diagram with five states: INIT, MODE SELECT, PVP MODE, PVC MODE, and DISPLAY WINNER, with transitions between them.">
+        <img src="images/ttt-state-machine.svg" alt="State machine diagram with five states: INIT, MODE SELECT, PVP MODE, PVC MODE, and DISPLAY WINNER, with transitions between them.">
       </button>
       <figcaption>Game loop as a state machine — 5 states, ticked every 500ms</figcaption>
     </figure>
@@ -629,9 +583,7 @@
 <section id="checkers">
   <div class="wrap">
     <div class="module-head-row">
-      <div class="matrix matrix-icon" aria-hidden="true">
-        <i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell white"></i><i class="cell red"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell white"></i><i class="cell black"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i><i class="cell blue"></i><i class="cell white"></i>
-      </div>
+      <img class="matrix matrix-icon" src="images/matrix-checkers.svg" alt="" aria-hidden="true">
       <p class="eyebrow" style="margin:0;">Module 02</p>
     </div>
     <h2>Checkers</h2>
@@ -651,7 +603,7 @@
 
     <figure>
       <button class="thumb diagram-thumb" data-full="images/checkers-state-machine.svg" aria-label="Enlarge state machine diagram">
-      <img src="images/checkers-state-machine.svg" alt="State machine diagram with five states: INIT, MODE SELECT, BLUE TURN, RED TURN, and DISP WIN, with transitions between them.">
+        <img src="images/checkers-state-machine.svg" alt="State machine diagram with five states: INIT, MODE SELECT, BLUE TURN, RED TURN, and DISP WIN, with transitions between them.">
       </button>
       <figcaption>Game loop as a state machine — turns alternate between BLUE_TURN and RED_TURN</figcaption>
     </figure>
@@ -737,11 +689,14 @@
       });
     });
 
-    closeBtn.addEventListener('click', function(){ lightbox.close(); });
+    closeBtn.addEventListener('click', function(){
+      lightbox.close();
+    });
     lightbox.addEventListener('click', function(e){
       if(e.target === lightbox) lightbox.close();
     });
-    lightbox.addEventListener('close', function(){ // Fires on every close path — button, backdrop click, or native Escape handling.
+    // Fires on every close path — button, backdrop click, or native Escape handling.
+    lightbox.addEventListener('close', function(){
       lightboxImg.src = '';
     });
   })();
