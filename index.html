@@ -114,10 +114,18 @@
     </div>
 
     <figure>
-      <button class="thumb diagram-thumb" data-full="images/connection-diagram.svg" aria-label="Enlarge wiring diagram">
+      <!-- <button class="thumb diagram-thumb" data-full="images/connection-diagram.svg" aria-label="Enlarge wiring diagram"> -->
+        <object type="image/svg+xml" data="images/connection-diagram.svg" id="wiringDiagram"
+              aria-label="Fritzing wiring diagram showing the Arduino Mega connected to a 4x4 membrane keypad, a 16x2 LCD, and an 8x8 WS2812 LED matrix via a breadboard.">
         <img src="images/connection-diagram.svg" alt="Fritzing wiring diagram showing the Arduino Mega connected to a 4x4 membrane keypad, a 16x2 LCD, and an 8x8 WS2812 LED matrix via a breadboard.">
-      </button>
-      <figcaption>Wiring diagram — identical for both games</figcaption>
+        </object>
+      <div class="keypad-toggle" role="group" aria-label="Keypad legend">
+        <span class="keypad-toggle-label">Keypad legend:</span>
+        <button type="button" class="keypad-toggle-btn active" data-mode="numbers">Tic-Tac-Toe layout</button>
+        <button type="button" class="keypad-toggle-btn" data-mode="arrows">Checkers layout</button>
+      </div>
+      <!-- </button> -->
+      <figcaption>Wiring diagram — identical for both games. Toggle above to see how the same keypad is read differently by each.</figcaption>
     </figure>
   </div>
 </section>

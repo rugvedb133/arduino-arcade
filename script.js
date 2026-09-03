@@ -24,3 +24,27 @@
     lightboxImg.src = '';
   });
 })();
+
+(function(){
+  var wiringObj = document.getElementById('wiringDiagram');
+  var toggleBtns = document.querySelectorAll('.keypad-toggle-btn');
+  if(!wiringObj || !toggleBtns.length) return;
+
+  function setMode(mode){
+    // contentDocument is only reachable when the SVG and the page share an origin
+    var svgDoc = wiringObj.contentDocument;
+    if(!svgDoc) return;
+    var keypadText = svgDoc.getElementById('keypad_text');
+    if(!keypadText) return;
+    keypadText.classList.toggle('mode-arrows', mode === 'arrows');
+    toggleBtns.forEach(function(btn){
+      btn.classList.toggle('active', btn.getAttribute('data-mode') === mode);
+    });
+  }
+
+  toggleBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      setMode(btn.getAttribute('data-mode'));
+    });
+  });
+})();
