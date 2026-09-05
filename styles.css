@@ -232,7 +232,7 @@ figure img{
   border:1px solid var(--line);
 }
 .keypad-toggle{
-  display:flex; align-items:center; flex-wrap:wrap;
+  display:flex; align-items:center; flex-wrap:wrap; justify-content: center;
   gap:8px;
   margin-top:14px;
 }
