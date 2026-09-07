@@ -1,13 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="background:0 0;background-color:transparent;color-scheme:light dark" viewBox="0 0 839 546">
   <g style="filter:drop-shadow(light-dark(rgba(61,69,116,.2),rgba(168,175,216,.2)) 3px 3px 6px)">
-    <g data-cell-id="0">
-      <g data-cell-id="1">
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-6">
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="m23.13 150.64 52.72 83.99" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m79.54 240.5-6.62-4.03 5.87-3.68Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
           </g>
-          <g>
             <switch>
               <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
                 <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:198px;margin-left:52px">
@@ -19,13 +15,10 @@
                 </div>
               </foreignObject>
             </switch>
-          </g>
-        </g>
         <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2" data-cell-id="eht-Ra3FLX0FOjuaM4R1-7">
           <path fill="none" d="M181.53 269.44h71.16" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
           <path fill="#3a4f43" d="m259.62 269.44-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
         </g>
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-1">
           <ellipse cx="122.13" cy="269.44" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
           <switch transform="scale(.99)">
             <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
@@ -43,8 +36,6 @@
               </div>
             </foreignObject>
           </switch>
-        </g>
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-8">
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M320.13 229.84q0-118.74 130.56-118.8" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m457.62 111.04-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
@@ -60,8 +51,6 @@
               </div>
             </foreignObject>
           </switch>
-        </g>
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-10">
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M320.13 309.04q0 118.86 130.56 118.8" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m457.62 427.84-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
@@ -80,8 +69,6 @@
               </div>
             </foreignObject>
           </switch>
-        </g>
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-2">
           <ellipse cx="320.13" cy="269.44" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
           <switch transform="scale(.99)">
             <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
@@ -102,8 +89,6 @@
               </div>
             </foreignObject>
           </switch>
-        </g>
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-14">
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M775.53 269.44q39.6.06 39.6 123.81T518.13 517t-297-109.78q0-109.77 48.96-109.78" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m277.02 297.44-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
@@ -119,8 +104,6 @@
               </div>
             </foreignObject>
           </switch>
-        </g>
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-3">
           <ellipse cx="716.13" cy="269.44" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
           <switch transform="scale(.99)">
             <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
@@ -138,8 +121,6 @@
               </div>
             </foreignObject>
           </switch>
-        </g>
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-11">
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M577.53 427.84q138.6.06 138.6-110.76" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m716.13 310.15 3.47 6.93h-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
@@ -155,8 +136,6 @@
               </div>
             </foreignObject>
           </switch>
-        </g>
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-4">
           <ellipse cx="518.13" cy="427.84" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
           <switch transform="scale(.99)">
             <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
@@ -174,8 +153,6 @@
               </div>
             </foreignObject>
           </switch>
-        </g>
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-9">
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M577.53 111.04q138.6.06 138.6 110.76" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m716.13 228.73-3.46-6.93h6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
@@ -191,8 +168,6 @@
               </div>
             </foreignObject>
           </switch>
-        </g>
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-5">
           <ellipse cx="518.13" cy="111.04" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
           <switch transform="scale(.99)">
             <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
@@ -210,8 +185,6 @@
               </div>
             </foreignObject>
           </switch>
-        </g>
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-15">
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M560.13 83.04q-.07-51.14-42-51.14T476.14 75" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="M476.13 81.93 472.67 75l6.93.01Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
@@ -227,8 +200,6 @@
               </div>
             </foreignObject>
           </switch>
-        </g>
-        <g data-cell-id="eht-Ra3FLX0FOjuaM4R1-16">
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M560.13 399.84q-.07-51.14-42-51.14t-41.99 43.1" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m476.13 398.73-3.46-6.93 6.93.01Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
@@ -244,8 +215,5 @@
               </div>
             </foreignObject>
           </switch>
-        </g>
-      </g>
-    </g>
   </g>
 </svg>

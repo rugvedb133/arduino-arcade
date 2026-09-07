@@ -55,11 +55,11 @@
   <div class="wrap">
     <p class="eyebrow">ARDUINO ARCADE</p>
     <h1>Tic-Tac-Toe &amp; Checkers, Wired by Hand</h1>
-    <p class="lede">Two turn-based games running on one Arduino Mega — no display library shortcuts, no game engine. Every LED, every keypress, and every AI move is driven by code written from scratch.</p>
+    <p class="lede">Two turn-based games running on one Arduino Mega rig: no display library shortcuts, no game engine. Every LED, every keypress, and every CPU move is driven by code written from scratch.</p>
     <div class="tagrow">
       <span class="tag">Arduino Mega 2560 R3</span>
       <span class="tag">C++</span>
-      <span class="tag">WS2812 LED Matrix</span>
+      <span class="tag">WS2812 8&times;8 LED Matrix</span>
       <span class="tag">I2C 16&times;2 LCD</span>
       <span class="tag">4&times;4 Membrane Keypad</span>
       <span class="tag">Minimax AI</span>
@@ -84,28 +84,28 @@
   <div class="wrap">
     <p class="eyebrow">The Rig</p>
     <h2>One Board, Two Games</h2>
-    <p class="section-intro">Both games run on the exact same physical setup. I built the checkers board right after finishing tic-tac-toe and reused the wiring rather than starting over. An Arduino Mega reads button presses from a membrane keypad, prints game status to a character LCD, and drives a grid of individually-addressable RGB LEDs that stands in for the board itself.</p>
+    <p class="section-intro">Both games run on the exact same physical setup. I built the checkers board right after finishing tic-tac-toe and reused the wiring rather than starting over. An Arduino Mega reads button presses from a membrane keypad, prints game status to a 16&times;2 character LCD, and drives a grid of individually-addressable RGB LEDs that stands in for the board itself.</p>
 
     <div class="parts-grid">
       <div class="part">
         <div class="part-name">Arduino Mega 2560</div>
-        <div class="part-desc">Main controller — runs the game logic and drives every peripheral below.</div>
+        <div class="part-desc">Main controller — runs the game logic and drives every peripheral.</div>
       </div>
       <div class="part">
         <div class="part-name">8&times;8 WS2812 RGB LED Matrix</div>
-        <div class="part-desc">The board itself: 64 individually addressable pixels, wired in a serpentine (zig-zag) pattern.</div>
+        <div class="part-desc">The board itself: 64 individually addressable pixels, wired in a zig-zag pattern.</div>
       </div>
       <div class="part">
         <div class="part-name">16&times;2 Character LCD</div>
-        <div class="part-desc">Status line — whose turn it is, current mode, win and draw messages.</div>
+        <div class="part-desc">Shows status lines: whose turn it is, current mode, win and draw messages.</div>
       </div>
       <div class="part">
         <div class="part-name">4&times;4 Switch Membrane Keypad</div>
-        <div class="part-desc">All player input. No joystick, no touchscreen — every move is a keypress.</div>
+        <div class="part-desc">For player input. No joystick, no touchscreen; every move is a keypress.</div>
       </div>
       <div class="part">
         <div class="part-name">Breadboard</div>
-        <div class="part-desc">Fully breadboarded, no custom PCB — the same board for both projects.</div>
+        <div class="part-desc">Fully breadboarded, no custom PCB; the same board is reuses for both phases.</div>
       </div>
       <div class="part">
         <div class="part-name">Jumper wires</div>
@@ -114,17 +114,15 @@
     </div>
 
     <figure>
-      <!-- <button class="thumb diagram-thumb" data-full="images/connection-diagram.svg" aria-label="Enlarge wiring diagram"> -->
         <object type="image/svg+xml" data="images/connection-diagram.svg" id="wiringDiagram"
               aria-label="Fritzing wiring diagram showing the Arduino Mega connected to a 4x4 membrane keypad, a 16x2 LCD, and an 8x8 WS2812 LED matrix via a breadboard.">
-        <img src="images/connection-diagram.png" alt="Fritzing wiring diagram showing the Arduino Mega connected to a 4x4 membrane keypad, a 16x2 LCD, and an 8x8 WS2812 LED matrix via a breadboard.">
+          <img src="images/connection-diagram.png" alt="Fritzing wiring diagram showing the Arduino Mega connected to a 4x4 membrane keypad, a 16x2 LCD, and an 8x8 WS2812 LED matrix via a breadboard.">
         </object>
       <div class="keypad-toggle" role="group" aria-label="Keypad legend">
         <span class="keypad-toggle-label">Keypad legend:</span>
         <button type="button" class="keypad-toggle-btn active" data-mode="numbers">Tic-Tac-Toe layout</button>
         <button type="button" class="keypad-toggle-btn" data-mode="arrows">Checkers layout</button>
       </div>
-      <!-- </button> -->
       <figcaption>Wiring diagram — identical for both games. Toggle above to see how the same keypad is read differently by each.</figcaption>
     </figure>
   </div>
@@ -139,25 +137,25 @@
       <p class="eyebrow" style="margin:0;">Module 01</p>
     </div>
     <h2>Tic-Tac-Toe</h2>
-    <p class="section-intro">Classic 3-in-a-row, playable two-player or against the CPU. Since the LED matrix is 8&times;8 and a tic-tac-toe board is 3&times;3, each cell became a 2&times;2 block of LEDs, with a full row and column as a yellow grid line between cells — visible in the recreation above.</p>
+    <p class="section-intro">Classic 3-in-a-row, playable between two players or against the CPU. Since the LED matrix is 8&times;8 and a tic-tac-toe board is 3&times;3, each cell became a 2&times;2 block of LEDs, with a full row and column as a yellow grid line between cells (visible in the recreation above).</p>
 
     <figure class="video-frame">
       <iframe src="https://www.youtube.com/embed/Pk7ccf08vmk" title="Tic-Tac-Toe on Arduino demo video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </figure>
-    <figcaption class="video-label">Demo video &mdash; player vs player and player vs CPU</figcaption>
+    <figcaption class="video-label">Demo video</figcaption>
 
     <h3>How it plays</h3>
     <ul class="feature-list">
-      <li><strong>Two-player mode</strong> — keypad digits 1&ndash;9 map directly onto the 3&times;3 grid. The game blocks moves on an occupied square and checks all eight win lines after every turn.</li>
-      <li><strong>Player vs CPU, easy</strong> — the CPU plays randomly for its first couple of moves, which is enough to make it beatable most games.</li>
-      <li><strong>Player vs CPU, hard</strong> — a full minimax search runs every turn. It plays optimally and is essentially unbeatable, so I added a short "thinking" pause before its move to make it feel less instantaneous.</li>
+      <li><strong>Two-player mode</strong>: Keypad digits 1 to 9 map directly onto the 3&times;3 grid. The game blocks moves on an occupied square and checks all eight win lines after every turn.</li>
+      <li><strong>Player vs CPU, easy</strong>: The CPU plays randomly for its first couple of moves, which is enough to make it beatable most games.</li>
+      <li><strong>Player vs CPU, hard</strong>: A full minimax search runs every turn. It plays optimally and is essentially unbeatable, so I added a short "thinking" pause before its move to make it feel less instantaneous.</li>
     </ul>
 
     <figure>
       <button class="thumb diagram-thumb" data-full="images/ttt-state-machine.svg" aria-label="Enlarge state machine diagram">
         <img src="images/ttt-state-machine.svg" alt="State machine diagram with five states: INIT, MODE SELECT, PVP MODE, PVC MODE, and DISPLAY WINNER, with transitions between them.">
       </button>
-      <figcaption>Game loop as a state machine — 5 states, ticked every 500ms</figcaption>
+      <figcaption>Game loop as a state machine: 5 states, ticked every 500ms</figcaption>
     </figure>
 
     <h3>In action</h3>
@@ -166,13 +164,13 @@
         <button class="thumb" data-full="images/ttt-photo-1.avif" aria-label="Enlarge photo: mode select screen">
           <img src="images/ttt-photo-1.avif" alt="Arduino setup showing the LCD mode-select screen (Player vs Player or Player vs CPU) with the LED matrix lit blank beside it.">
         </button>
-        <figcaption>Mode select — 2-player or vs CPU</figcaption>
+        <figcaption>Mode select: 2-player or vs CPU</figcaption>
       </figure>
       <figure>
         <button class="thumb" data-full="images/ttt-photo-2.avif" aria-label="Enlarge photo: winning screen">
           <img src="images/ttt-photo-2.avif" alt="LED matrix and LCD showing a completed game with a winner announced, matrix lit in red and green.">
         </button>
-        <figcaption>Winning screen — board lights up the winner's color</figcaption>
+        <figcaption>Winning screen: board lights up the winner's color</figcaption>
       </figure>
       <figure>
         <button class="thumb" data-full="images/ttt-photo-3.avif" aria-label="Enlarge photo: difficulty select screen">
@@ -184,15 +182,16 @@
         <button class="thumb" data-full="images/ttt-photo-4.avif" aria-label="Enlarge photo: ready to start screen">
           <img src="images/ttt-photo-4.avif" alt="LCD prompting the player to press 0 to start the match, after mode and difficulty have been chosen.">
         </button>
-        <figcaption>Ready to start, after mode + difficulty are set</figcaption>
+        <figcaption>Press <code>0</code> to start, after mode & difficulty are set</figcaption>
       </figure>
     </div>
 
     <div class="callout">
       <span class="callout-label">Challenges &amp; trade-offs</span>
       <ul>
-        <li><strong>8&times;8 doesn't split evenly into 3.</strong> A 2&times;2-per-cell layout was the best fit available on hardware I already had — a 9&times;9 or 12&times;12 matrix would have allowed real X/O shapes instead of plain color blocks.</li>
+        <li><strong>8&times;8 doesn't split evenly into 3.</strong> A 2&times;2-per-cell layout was the best fit available on hardware I already had, but a 9&times;9 or 12&times;12 matrix would have allowed real X/O shapes instead of plain color blocks.</li>
         <li><strong>Memory was tight.</strong> The Mega's limited RAM meant the hard-mode minimax search had to stay lean, with no elaborate move caching.</li>
+        <li><strong>LCD width was also limited.</strong> A 16 character line meant that <code>BLUE</code> had to be written as <code>BLU</code>, along with other abbreviations. The alternative would have been to have the text scroll horizontally, which in turn would've bloated the control code unnecessarily.</li>
         <li><strong>Blocking delays break a state machine.</strong> Giving the AI a "thinking" pause without freezing everything else meant swapping Arduino's <code>delay()</code> for a manual elapsed-time check in the main loop.</li>
       </ul>
     </div>
@@ -208,17 +207,17 @@
       <p class="eyebrow" style="margin:0;">Module 02</p>
     </div>
     <h2>Checkers</h2>
-    <p class="section-intro">Full 8&times;8 checkers, this time using the LED matrix at its native resolution — no compromise layout needed. Pieces move diagonally, capture by jumping an opponent, and promote to "kings" on reaching the far row.</p>
+    <p class="section-intro">Full 8&times;8 checkers, this time using each LED from the matrix to represent one board cell, no layout compromise needed. Pieces move diagonally, capture by jumping an opponent, and promote to "kings" on reaching the far row.</p>
 
     <figure class="video-frame">
       <iframe src="https://www.youtube.com/embed/MfjVNr8zxWw" title="Checkers on Arduino demo video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </figure>
-    <figcaption class="video-label">Demo video &mdash; player vs player and player vs CPU</figcaption>
+    <figcaption class="video-label">Demo video</figcaption>
 
     <h3>How it plays</h3>
     <ul class="feature-list">
       <li><strong>A real 2D board.</strong> Tic-tac-toe's board was small enough to give each square its own named field. Checkers' 64 squares needed a proper 2D array instead.</li>
-      <li><strong>Coordinate-based moves.</strong> Rather than cycling through squares, a player types the coordinates of the piece to move, then the destination — both echoed live on the LCD.</li>
+      <li><strong>Coordinate-based moves.</strong> Rather than cycling through squares, a player types the coordinates of the piece to move, then the destination; both are echoed live on the LCD.</li>
       <li><strong>Kings &amp; highlights.</strong> Kings get a distinct LED shade, and the currently selected piece and its legal moves light up in a lighter tone before you confirm.</li>
     </ul>
 
@@ -226,7 +225,7 @@
       <button class="thumb diagram-thumb" data-full="images/checkers-state-machine.svg" aria-label="Enlarge state machine diagram">
         <img src="images/checkers-state-machine.svg" alt="State machine diagram with five states: INIT, MODE SELECT, BLUE TURN, RED TURN, and DISP WIN, with transitions between them.">
       </button>
-      <figcaption>Game loop as a state machine — turns alternate between BLUE_TURN and RED_TURN</figcaption>
+      <figcaption>Game loop as a state machine: turns alternate between <code>BLUE_TURN</code> and <code>RED_TURN</code></figcaption>
     </figure>
 
     <h3>In action</h3>
@@ -235,13 +234,13 @@
         <button class="thumb" data-full="images/checkers-photo-1.avif" aria-label="Enlarge photo: full rig and mode select">
           <img src="images/checkers-photo-1.avif" alt="Full checkers rig showing keypad, LED matrix, breadboard and LCD at the mode-select screen.">
         </button>
-        <figcaption>The full rig, at mode select</figcaption>
+        <figcaption>Mode select</figcaption>
       </figure>
       <figure>
         <button class="thumb" data-full="images/checkers-photo-2.avif" aria-label="Enlarge photo: new game in player vs player mode">
           <img src="images/checkers-photo-2.avif" alt="LED matrix showing a fresh checkers game in player vs player mode, red and blue pieces in starting position.">
         </button>
-        <figcaption>A fresh game, player vs player</figcaption>
+        <figcaption>A fresh game: player vs player</figcaption>
       </figure>
       <figure>
         <button class="thumb" data-full="images/checkers-photo-3.avif" aria-label="Enlarge photo: new game in player vs CPU mode">
@@ -253,16 +252,16 @@
         <button class="thumb" data-full="images/checkers-photo-4.avif" aria-label="Enlarge photo: game in progress with score on LCD">
           <img src="images/checkers-photo-4.avif" alt="LED matrix mid-game with pieces captured on both sides, LCD tracking each player's score.">
         </button>
-        <figcaption>Mid-game &mdash; LCD tracks each player's score</figcaption>
+        <figcaption>Mid-game: LCD tracks each player's score</figcaption>
       </figure>
     </div>
 
     <div class="callout">
       <span class="callout-label">Challenges &amp; trade-offs</span>
       <ul>
-        <li><strong>The LED strip isn't wired in reading order.</strong> It's a single strip snaking back and forth, so each row runs the opposite direction from the last. Mapping 2D board coordinates onto that layout took real trial and error.</li>
-        <li><strong>Minimax didn't survive contact with an 8&times;8 board.</strong> I'd planned a minimax search with alpha-beta pruning for the CPU, same idea as tic-tac-toe's hard mode. But checkers' search tree is far bigger, and the Mega couldn't recurse deep enough in reasonable time. I shipped a simpler move-scanning heuristic instead — a straightforward trade-off between the ideal algorithm and what the hardware could actually do.</li>
-        <li><strong>Joystick input didn't make the cut.</strong> I'd originally planned a joystick for cycling through pieces, but flaky analog readings and thin library support compounded with project deadlines pushed me back to the keypad.</li>
+        <li><strong>The LED strip isn't wired in reading order.</strong> It's a single strip in a serpentine order, so each row runs the opposite direction from the last. It wasn't possible to use a 2D array directly, and mapping board coordinates onto that layout took real trial and error.</li>
+        <li><strong>Minimax didn't survive contact with an 8&times;8 board.</strong> I'd planned a minimax search with alpha-beta pruning for the CPU, same idea as tic-tac-toe's hard mode. But checkers' search tree is far bigger, and the Mega couldn't recurse deep enough in reasonable time. I shipped a simpler move-scanning heuristic instead, as a trade-off between the ideal algorithm and what the hardware could actually do.</li>
+        <li><strong>Joystick input didn't make the cut.</strong> I had originally planned a joystick for cycling through pieces, but flaky analog readings and thin library support compounded with project deadlines pushed me back to the keypad.</li>
       </ul>
     </div>
   </div>
@@ -275,18 +274,16 @@
     <p class="eyebrow">Looking Back</p>
     <h2>What Building Two Games Taught Me</h2>
     <div class="reflection-body">
-      <p>Structuring both games as explicit state machines made a real difference — with no operating system underneath to lean on, having named states and clear transitions kept the game loop predictable instead of turning into a tangle of flags. It's the same reason I split each project's code into separate header files once a single <code>.ino</code> stopped being manageable.</p>
+      <p>Structuring both games as explicit state machines made a real difference. With no operating system underneath to lean on, having named states and clear transitions kept the game loop predictable instead of turning into a tangle of flags. It's the same reason I split each project's code into separate header files once a single <code>.ino</code> stopped being manageable.</p>
       <p>The bigger lesson was the gap between an algorithm on paper and what a microcontroller can actually run in real time. Minimax worked cleanly for tic-tac-toe's small search space; the same approach hit a wall on checkers' much larger board, and knowing when to trade optimality for something that actually runs on the hardware turned out to be as important as the algorithm itself.</p>
       <p>And underneath both projects was a lot of low-level peripheral work I'd never had to think about before: scanning a matrix keypad, addressing LEDs individually over a single data line, driving an LCD over a 4-bit parallel interface. None of it is hard in isolation, but getting all of it talking to one Arduino Mega at once, on a shared 500ms tick, is where the real debugging happened.</p>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap footer-row">
+<footer class="wrap footer-row">
     <span class="footer-note">Coursework project &middot; CS122A, Intermediate Embedded Systems</span>
     <a class="footer-back" href="/projects.html">&larr; Back to all projects</a>
-  </div>
 </footer>
 
 <dialog class="lightbox" id="lightbox" aria-label="Enlarged photo">
