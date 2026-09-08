@@ -4,216 +4,63 @@
             <path fill="none" d="m23.13 150.64 52.72 83.99" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m79.54 240.5-6.62-4.03 5.87-3.68Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
           </g>
-            <switch>
-              <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-                <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:198px;margin-left:52px">
-                  <div style="box-sizing:border-box;font-size:0;text-align:center;color:#e9efe9;background-color:#141b17">
-                    <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:#e9efe9;line-height:1.2;pointer-events:all;background-color:#141b17;white-space:nowrap">
-                      Power ON
-                    </div>
-                  </div>
-                </div>
-              </foreignObject>
-            </switch>
+            <rect x="28" y="188.6" width="59.0" height="18.8" fill="#141b17" rx="5" />
+            <text x="32" y="198" fill="#e9efe9" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">Power ON</text>
         <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2" data-cell-id="eht-Ra3FLX0FOjuaM4R1-7">
           <path fill="none" d="M181.53 269.44h71.16" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
           <path fill="#3a4f43" d="m259.62 269.44-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
         </g>
           <ellipse cx="122.13" cy="269.44" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          <switch transform="scale(.99)">
-            <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:118px;height:1px;padding-top:272px;margin-left:64px">
-                <div style="box-sizing:border-box;font-size:0;text-align:center;color:#e9efe9">
-                  <div style="display:inline-block;font-size:12px;font-family:Helvetica;color:#e9efe9;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
-                    <div style="float:left;width:118px;height:76px">
-                      <div contenteditable="false" data-shape-inside="1" style="float:left;width:59px;height:76px;shape-outside:polygon(68.8% .05%,66.45% .32%,51.42% 3.76%,37.91% 8.32%,26.15% 13.82%,16.3% 20.11%,8.5% 27.03%,2.86% 34.42%,.05% 42.13%,.05% 50%,.05% 57.87%,2.86% 65.58%,8.5% 72.97%,16.3% 79.89%,26.15% 86.18%,37.91% 91.68%,51.42% 96.24%,66.45% 99.68%,68.8% 99.95%,.05% 99.95%,.05% .05%);shape-margin:2px;pointer-events:none"/>
-                      <div contenteditable="false" data-shape-inside="1" style="float:right;width:59px;height:76px;shape-outside:polygon(31.2% .05%,33.55% .32%,48.58% 3.76%,62.09% 8.32%,73.85% 13.82%,83.7% 20.11%,91.5% 27.03%,97.14% 34.42%,99.95% 42.13%,99.95% 50%,99.95% 57.87%,97.14% 65.58%,91.5% 72.97%,83.7% 79.89%,73.85% 86.18%,62.09% 91.68%,48.58% 96.24%,33.55% 99.68%,31.2% 99.95%,99.95% 99.95%,99.95% .05%);shape-margin:2px;pointer-events:none"/>
-                      <div contenteditable="false" data-shape-inside="1" style="height:31px;pointer-events:none"/>
-                      INIT
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </foreignObject>
-          </switch>
+          <text x="110" y="270" fill="#e9efe9" font-family="Helvetica" font-size="12px" text-anchor="start" dominant-baseline="central">INIT</text>
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M320.13 229.84q0-118.74 130.56-118.8" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m457.62 111.04-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
           </g>
-          <switch transform="scale(.99)">
-            <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:152px;margin-left:343px">
-                <div style="box-sizing:border-box;font-size:0;text-align:center;color:#e9efe9;background-color:#141b17">
-                  <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:#e9efe9;line-height:1.2;pointer-events:all;background-color:#141b17;white-space:nowrap">
-                    if (MODE == PVP)
-                  </div>
-                </div>
-              </div>
-            </foreignObject>
-          </switch>
+          <rect x="289" y="142.6" width="100" height="18.8" fill="#141b17" rx="5" />
+          <text x="293" y="152" fill="#e9efe9" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">if (MODE == PVP)</text>
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M320.13 309.04q0 118.86 130.56 118.8" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m457.62 427.84-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
           </g>
-          <switch transform="scale(.99)">
-            <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:392px;margin-left:343px">
-                <div style="box-sizing:border-box;font-size:0;text-align:center;color:#000;background-color:#141b17">
-                  <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:light-dark(#000,#fff);line-height:1.2;pointer-events:all;background-color:#141b17;white-space:nowrap">
-                    if (
-                    <span style="color:light-dark(#000,#fff)">
-                      MODE == PVC)
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </foreignObject>
-          </switch>
+          <rect x="289" y="375.8" width="100" height="18.8" fill="#141b17" rx="5" />
+          <text x="293" y="385" fill="light-dark(#000,#fff)" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">if (MODE == PVC)</text>
           <ellipse cx="320.13" cy="269.44" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          <switch transform="scale(.99)">
-            <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:118px;height:1px;padding-top:272px;margin-left:264px">
-                <div style="box-sizing:border-box;font-size:0;text-align:center;color:#000">
-                  <div style="display:inline-block;font-size:12px;font-family:Helvetica;color:light-dark(#000,#fff);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
-                    <div style="float:left;width:118px;height:76px">
-                      <div contenteditable="false" data-shape-inside="1" style="float:left;width:59px;height:76px;shape-outside:polygon(68.8% .05%,66.45% .32%,51.42% 3.76%,37.91% 8.32%,26.15% 13.82%,16.3% 20.11%,8.5% 27.03%,2.86% 34.42%,.05% 42.13%,.05% 50%,.05% 57.87%,2.86% 65.58%,8.5% 72.97%,16.3% 79.89%,26.15% 86.18%,37.91% 91.68%,51.42% 96.24%,66.45% 99.68%,68.8% 99.95%,.05% 99.95%,.05% .05%);shape-margin:2px;pointer-events:none"/>
-                      <div contenteditable="false" data-shape-inside="1" style="float:right;width:59px;height:76px;shape-outside:polygon(31.2% .05%,33.55% .32%,48.58% 3.76%,62.09% 8.32%,73.85% 13.82%,83.7% 20.11%,91.5% 27.03%,97.14% 34.42%,99.95% 42.13%,99.95% 50%,99.95% 57.87%,97.14% 65.58%,91.5% 72.97%,83.7% 79.89%,73.85% 86.18%,62.09% 91.68%,48.58% 96.24%,33.55% 99.68%,31.2% 99.95%,99.95% 99.95%,99.95% .05%);shape-margin:2px;pointer-events:none"/>
-                      <div contenteditable="false" data-shape-inside="1" style="height:31px;pointer-events:none"/>
-                      MODE
-                      <span style="background-color:transparent;color:light-dark(#000,#fff);line-height:50%">
-                        SELECT
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </foreignObject>
-          </switch>
+          <text x="278" y="270" fill="light-dark(#000,#fff)" font-family="Helvetica" font-size="12px" text-anchor="start" dominant-baseline="central">MODE SELECT</text>
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M775.53 269.44q39.6.06 39.6 123.81T518.13 517t-297-109.78q0-109.77 48.96-109.78" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m277.02 297.44-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
           </g>
-          <switch transform="scale(.99)">
-            <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:522px;margin-left:523px">
-                <div style="box-sizing:border-box;font-size:0;text-align:center;color:#e9efe9;background-color:#141b17">
-                  <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:#e9efe9;line-height:1.2;pointer-events:all;background-color:#141b17;white-space:nowrap">
-                    if (newGame)
-                  </div>
-                </div>
-              </div>
-            </foreignObject>
-          </switch>
+          <rect x="519" y="512.6" width="75" height="18.8" fill="#141b17" rx="5" />
+          <text x="523" y="522" fill="#e9efe9" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">if (newGame)</text>
           <ellipse cx="716.13" cy="269.44" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          <switch transform="scale(.99)">
-            <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:118px;height:1px;padding-top:272px;margin-left:664px">
-                <div style="box-sizing:border-box;font-size:0;text-align:center;color:#000">
-                  <div style="display:inline-block;font-size:12px;font-family:Helvetica;color:light-dark(#000,#e9efe9);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
-                    <div style="float:left;width:118px;height:76px">
-                      <div contenteditable="false" data-shape-inside="1" style="float:left;width:59px;height:76px;shape-outside:polygon(68.8% .05%,66.45% .32%,51.42% 3.76%,37.91% 8.32%,26.15% 13.82%,16.3% 20.11%,8.5% 27.03%,2.86% 34.42%,.05% 42.13%,.05% 50%,.05% 57.87%,2.86% 65.58%,8.5% 72.97%,16.3% 79.89%,26.15% 86.18%,37.91% 91.68%,51.42% 96.24%,66.45% 99.68%,68.8% 99.95%,.05% 99.95%,.05% .05%);shape-margin:2px;pointer-events:none"/>
-                      <div contenteditable="false" data-shape-inside="1" style="float:right;width:59px;height:76px;shape-outside:polygon(31.2% .05%,33.55% .32%,48.58% 3.76%,62.09% 8.32%,73.85% 13.82%,83.7% 20.11%,91.5% 27.03%,97.14% 34.42%,99.95% 42.13%,99.95% 50%,99.95% 57.87%,97.14% 65.58%,91.5% 72.97%,83.7% 79.89%,73.85% 86.18%,62.09% 91.68%,48.58% 96.24%,33.55% 99.68%,31.2% 99.95%,99.95% 99.95%,99.95% .05%);shape-margin:2px;pointer-events:none"/>
-                      <div contenteditable="false" data-shape-inside="1" style="height:31px;pointer-events:none"/>
-                      DISPLAY WINNER
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </foreignObject>
-          </switch>
+          <text x="666" y="270" fill="light-dark(#000,#e9efe9)" font-family="Helvetica" font-size="12px" text-anchor="start" dominant-baseline="central">DISPLAY WINNER</text>
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M577.53 427.84q138.6.06 138.6-110.76" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m716.13 310.15 3.47 6.93h-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
           </g>
-          <switch transform="scale(.99)">
-            <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:392px;margin-left:703px">
-                <div style="box-sizing:border-box;font-size:0;text-align:center;color:#e9efe9;background-color:#141b17">
-                  <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:#e9efe9;line-height:1.2;pointer-events:all;background-color:#141b17;white-space:nowrap">
-                    if (finish)
-                  </div>
-                </div>
-              </div>
-            </foreignObject>
-          </switch>
+          <rect x="669" y="382.6" width="50" height="18.8" fill="#141b17" rx="5" />
+          <text x="673" y="392" fill="#e9efe9" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">if (finish)</text>
           <ellipse cx="518.13" cy="427.84" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          <switch transform="scale(.99)">
-            <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:118px;height:1px;padding-top:432px;margin-left:464px">
-                <div style="box-sizing:border-box;font-size:0;text-align:center;color:#e9efe9">
-                  <div style="display:inline-block;font-size:12px;font-family:Helvetica;color:#e9efe9;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
-                    <div style="float:left;width:118px;height:76px">
-                      <div contenteditable="false" data-shape-inside="1" style="float:left;width:59px;height:76px;shape-outside:polygon(68.8% .05%,66.45% .32%,51.42% 3.76%,37.91% 8.32%,26.15% 13.82%,16.3% 20.11%,8.5% 27.03%,2.86% 34.42%,.05% 42.13%,.05% 50%,.05% 57.87%,2.86% 65.58%,8.5% 72.97%,16.3% 79.89%,26.15% 86.18%,37.91% 91.68%,51.42% 96.24%,66.45% 99.68%,68.8% 99.95%,.05% 99.95%,.05% .05%);shape-margin:2px;pointer-events:none"/>
-                      <div contenteditable="false" data-shape-inside="1" style="float:right;width:59px;height:76px;shape-outside:polygon(31.2% .05%,33.55% .32%,48.58% 3.76%,62.09% 8.32%,73.85% 13.82%,83.7% 20.11%,91.5% 27.03%,97.14% 34.42%,99.95% 42.13%,99.95% 50%,99.95% 57.87%,97.14% 65.58%,91.5% 72.97%,83.7% 79.89%,73.85% 86.18%,62.09% 91.68%,48.58% 96.24%,33.55% 99.68%,31.2% 99.95%,99.95% 99.95%,99.95% .05%);shape-margin:2px;pointer-events:none"/>
-                      <div contenteditable="false" data-shape-inside="1" style="height:31px;pointer-events:none"/>
-                      CPU MODE
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </foreignObject>
-          </switch>
+          <text x="485" y="428" fill="#e9efe9" font-family="Helvetica" font-size="12px" text-anchor="start" dominant-baseline="central">CPU MODE</text>
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M577.53 111.04q138.6.06 138.6 110.76" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m716.13 228.73-3.46-6.93h6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
           </g>
-          <switch transform="scale(.99)">
-            <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:152px;margin-left:703px">
-                <div style="box-sizing:border-box;font-size:0;text-align:center;color:#e9efe9;background-color:#141b17">
-                  <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:#e9efe9;line-height:1.2;pointer-events:all;background-color:#141b17;white-space:nowrap">
-                    if (finish)
-                  </div>
-                </div>
-              </div>
-            </foreignObject>
-          </switch>
+          <rect x="669" y="142.6" width="50" height="18.8" fill="#141b17" rx="5" />
+          <text x="673" y="152" fill="#e9efe9" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">if (finish)</text>
           <ellipse cx="518.13" cy="111.04" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          <switch transform="scale(.99)">
-            <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:118px;height:1px;padding-top:112px;margin-left:464px">
-                <div style="box-sizing:border-box;font-size:0;text-align:center;color:#e9efe9">
-                  <div style="display:inline-block;font-size:12px;font-family:Helvetica;color:#e9efe9;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
-                    <div style="float:left;width:118px;height:76px">
-                      <div contenteditable="false" data-shape-inside="1" style="float:left;width:59px;height:76px;shape-outside:polygon(68.8% .05%,66.45% .32%,51.42% 3.76%,37.91% 8.32%,26.15% 13.82%,16.3% 20.11%,8.5% 27.03%,2.86% 34.42%,.05% 42.13%,.05% 50%,.05% 57.87%,2.86% 65.58%,8.5% 72.97%,16.3% 79.89%,26.15% 86.18%,37.91% 91.68%,51.42% 96.24%,66.45% 99.68%,68.8% 99.95%,.05% 99.95%,.05% .05%);shape-margin:2px;pointer-events:none"/>
-                      <div contenteditable="false" data-shape-inside="1" style="float:right;width:59px;height:76px;shape-outside:polygon(31.2% .05%,33.55% .32%,48.58% 3.76%,62.09% 8.32%,73.85% 13.82%,83.7% 20.11%,91.5% 27.03%,97.14% 34.42%,99.95% 42.13%,99.95% 50%,99.95% 57.87%,97.14% 65.58%,91.5% 72.97%,83.7% 79.89%,73.85% 86.18%,62.09% 91.68%,48.58% 96.24%,33.55% 99.68%,31.2% 99.95%,99.95% 99.95%,99.95% .05%);shape-margin:2px;pointer-events:none"/>
-                      <div contenteditable="false" data-shape-inside="1" style="height:31px;pointer-events:none"/>
-                      PVP MODE
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </foreignObject>
-          </switch>
+          <text x="485" y="112" fill="#e9efe9" font-family="Helvetica" font-size="12px" text-anchor="start" dominant-baseline="central">PVP MODE</text>
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M560.13 83.04q-.07-51.14-42-51.14T476.14 75" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="M476.13 81.93 472.67 75l6.93.01Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
           </g>
-          <switch transform="scale(.99)">
-            <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:22px;margin-left:523px">
-                <div style="box-sizing:border-box;font-size:0;text-align:center;color:#e9efe9;background-color:#141b17">
-                  <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:#e9efe9;line-height:1.2;pointer-events:all;background-color:#141b17;white-space:nowrap">
-                    while !(finish)
-                  </div>
-                </div>
-              </div>
-            </foreignObject>
-          </switch>
+          <rect x="480" y="12.6" width="75" height="18.8" fill="#141b17" rx="5" />
+          <text x="485" y="22" fill="#e9efe9" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">while !(finish)</text>
           <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
             <path fill="none" d="M560.13 399.84q-.07-51.14-42-51.14t-41.99 43.1" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
             <path fill="#3a4f43" d="m476.13 398.73-3.46-6.93 6.93.01Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
           </g>
-          <switch transform="scale(.99)">
-            <foreignObject width="102%" height="102%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
-              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:342px;margin-left:523px">
-                <div style="box-sizing:border-box;font-size:0;text-align:center;color:#000;background-color:#141b17">
-                  <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:light-dark(#000,#e9efe9);line-height:1.2;pointer-events:all;background-color:#141b17;white-space:nowrap">
-                    while !(finish)
-                  </div>
-                </div>
-              </div>
-            </foreignObject>
-          </switch>
+          <rect x="480" y="332.6" width="75" height="18.8" fill="#141b17" rx="5" />
+          <text x="485" y="342" fill="light-dark(#000,#e9efe9)" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">while !(finish)</text>
   </g>
 </svg>
