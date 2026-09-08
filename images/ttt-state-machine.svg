@@ -1,66 +1,66 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="background:0 0;background-color:transparent;color-scheme:light dark" viewBox="0 0 839 546">
   <g style="filter:drop-shadow(light-dark(rgba(61,69,116,.2),rgba(168,175,216,.2)) 3px 3px 6px)">
-          <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
-            <path fill="none" d="m23.13 150.64 52.72 83.99" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
-            <path fill="#3a4f43" d="m79.54 240.5-6.62-4.03 5.87-3.68Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          </g>
-            <rect x="28" y="188.6" width="59.0" height="18.8" fill="#141b17" rx="5" />
-            <text x="32" y="198" fill="#e9efe9" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">Power ON</text>
-        <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2" data-cell-id="eht-Ra3FLX0FOjuaM4R1-7">
-          <path fill="none" d="M181.53 269.44h71.16" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
-          <path fill="#3a4f43" d="m259.62 269.44-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
-        </g>
-          <ellipse cx="122.13" cy="269.44" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          <text x="110" y="270" fill="#e9efe9" font-family="Helvetica" font-size="12px" text-anchor="start" dominant-baseline="central">INIT</text>
-          <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
-            <path fill="none" d="M320.13 229.84q0-118.74 130.56-118.8" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
-            <path fill="#3a4f43" d="m457.62 111.04-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          </g>
-          <rect x="289" y="142.6" width="100" height="18.8" fill="#141b17" rx="5" />
-          <text x="293" y="152" fill="#e9efe9" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">if (MODE == PVP)</text>
-          <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
-            <path fill="none" d="M320.13 309.04q0 118.86 130.56 118.8" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
-            <path fill="#3a4f43" d="m457.62 427.84-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          </g>
-          <rect x="289" y="375.8" width="100" height="18.8" fill="#141b17" rx="5" />
-          <text x="293" y="385" fill="light-dark(#000,#fff)" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">if (MODE == PVC)</text>
-          <ellipse cx="320.13" cy="269.44" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          <text x="278" y="270" fill="light-dark(#000,#fff)" font-family="Helvetica" font-size="12px" text-anchor="start" dominant-baseline="central">MODE SELECT</text>
-          <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
-            <path fill="none" d="M775.53 269.44q39.6.06 39.6 123.81T518.13 517t-297-109.78q0-109.77 48.96-109.78" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
-            <path fill="#3a4f43" d="m277.02 297.44-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          </g>
-          <rect x="519" y="512.6" width="75" height="18.8" fill="#141b17" rx="5" />
-          <text x="523" y="522" fill="#e9efe9" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">if (newGame)</text>
-          <ellipse cx="716.13" cy="269.44" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          <text x="666" y="270" fill="light-dark(#000,#e9efe9)" font-family="Helvetica" font-size="12px" text-anchor="start" dominant-baseline="central">DISPLAY WINNER</text>
-          <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
-            <path fill="none" d="M577.53 427.84q138.6.06 138.6-110.76" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
-            <path fill="#3a4f43" d="m716.13 310.15 3.47 6.93h-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          </g>
-          <rect x="669" y="382.6" width="50" height="18.8" fill="#141b17" rx="5" />
-          <text x="673" y="392" fill="#e9efe9" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">if (finish)</text>
-          <ellipse cx="518.13" cy="427.84" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          <text x="485" y="428" fill="#e9efe9" font-family="Helvetica" font-size="12px" text-anchor="start" dominant-baseline="central">CPU MODE</text>
-          <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
-            <path fill="none" d="M577.53 111.04q138.6.06 138.6 110.76" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
-            <path fill="#3a4f43" d="m716.13 228.73-3.46-6.93h6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          </g>
-          <rect x="669" y="142.6" width="50" height="18.8" fill="#141b17" rx="5" />
-          <text x="673" y="152" fill="#e9efe9" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">if (finish)</text>
-          <ellipse cx="518.13" cy="111.04" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          <text x="485" y="112" fill="#e9efe9" font-family="Helvetica" font-size="12px" text-anchor="start" dominant-baseline="central">PVP MODE</text>
-          <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
-            <path fill="none" d="M560.13 83.04q-.07-51.14-42-51.14T476.14 75" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
-            <path fill="#3a4f43" d="M476.13 81.93 472.67 75l6.93.01Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          </g>
-          <rect x="480" y="12.6" width="75" height="18.8" fill="#141b17" rx="5" />
-          <text x="485" y="22" fill="#e9efe9" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">while !(finish)</text>
-          <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
-            <path fill="none" d="M560.13 399.84q-.07-51.14-42-51.14t-41.99 43.1" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
-            <path fill="#3a4f43" d="m476.13 398.73-3.46-6.93 6.93.01Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
-          </g>
-          <rect x="480" y="332.6" width="75" height="18.8" fill="#141b17" rx="5" />
-          <text x="485" y="342" fill="light-dark(#000,#e9efe9)" font-family="Helvetica" font-size="11px" text-anchor="start" dominant-baseline="central">while !(finish)</text>
+    <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
+      <path fill="none" d="m23.13 150.64 52.72 83.99" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
+      <path fill="#3a4f43" d="m79.54 240.5-6.62-4.03 5.87-3.68Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    </g>
+    <rect width="59" height="18.8" x="28" y="188.6" fill="#141b17" rx="5"/>
+    <text x="32" y="198" fill="#e9efe9" dominant-baseline="central" font-family="Helvetica" font-size="11">Power ON</text>
+    <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2" data-cell-id="eht-Ra3FLX0FOjuaM4R1-7">
+      <path fill="none" d="M181.53 269.44h71.16" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
+      <path fill="#3a4f43" d="m259.62 269.44-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    </g>
+    <ellipse cx="122.13" cy="269.44" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    <text x="110" y="270" fill="#e9efe9" dominant-baseline="central" font-family="Helvetica" font-size="12">INIT</text>
+    <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
+      <path fill="none" d="M320.13 229.84q0-118.74 130.56-118.8" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
+      <path fill="#3a4f43" d="m457.62 111.04-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    </g>
+    <rect width="100" height="18.8" x="289" y="142.6" fill="#141b17" rx="5"/>
+    <text x="293" y="152" fill="#e9efe9" dominant-baseline="central" font-family="Helvetica" font-size="11">if (MODE == PVP)</text>
+    <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
+      <path fill="none" d="M320.13 309.04q0 118.86 130.56 118.8" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
+      <path fill="#3a4f43" d="m457.62 427.84-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    </g>
+    <rect width="100" height="18.8" x="289" y="375.8" fill="#141b17" rx="5"/>
+    <text x="293" y="385" fill="light-dark(#000,#fff)" dominant-baseline="central" font-family="Helvetica" font-size="11">if (MODE == PVC)</text>
+    <ellipse cx="320.13" cy="269.44" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    <text x="278" y="270" fill="light-dark(#000,#fff)" dominant-baseline="central" font-family="Helvetica" font-size="12">MODE SELECT</text>
+    <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
+      <path fill="none" d="M775.53 269.44q39.6.06 39.6 123.81T518.13 517t-297-109.78q0-109.77 48.96-109.78" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
+      <path fill="#3a4f43" d="m277.02 297.44-6.93 3.47v-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    </g>
+    <rect width="75" height="18.8" x="519" y="512.6" fill="#141b17" rx="5"/>
+    <text x="523" y="522" fill="#e9efe9" dominant-baseline="central" font-family="Helvetica" font-size="11">if (newGame)</text>
+    <ellipse cx="716.13" cy="269.44" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    <text x="666" y="270" fill="light-dark(#000,#e9efe9)" dominant-baseline="central" font-family="Helvetica" font-size="12">DISPLAY WINNER</text>
+    <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
+      <path fill="none" d="M577.53 427.84q138.6.06 138.6-110.76" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
+      <path fill="#3a4f43" d="m716.13 310.15 3.47 6.93h-6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    </g>
+    <rect width="50" height="18.8" x="669" y="382.6" fill="#141b17" rx="5"/>
+    <text x="673" y="392" fill="#e9efe9" dominant-baseline="central" font-family="Helvetica" font-size="11">if (finish)</text>
+    <ellipse cx="518.13" cy="427.84" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    <text x="485" y="428" fill="#e9efe9" dominant-baseline="central" font-family="Helvetica" font-size="12">CPU MODE</text>
+    <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
+      <path fill="none" d="M577.53 111.04q138.6.06 138.6 110.76" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
+      <path fill="#3a4f43" d="m716.13 228.73-3.46-6.93h6.93Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    </g>
+    <rect width="50" height="18.8" x="669" y="142.6" fill="#141b17" rx="5"/>
+    <text x="673" y="152" fill="#e9efe9" dominant-baseline="central" font-family="Helvetica" font-size="11">if (finish)</text>
+    <ellipse cx="518.13" cy="111.04" fill="#141b17" stroke="#3a4f43" stroke-width="2" pointer-events="all" rx="59.4" ry="39.6" style="fill:#141b17;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    <text x="485" y="112" fill="#e9efe9" dominant-baseline="central" font-family="Helvetica" font-size="12">PVP MODE</text>
+    <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
+      <path fill="none" d="M560.13 83.04q-.07-51.14-42-51.14T476.14 75" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
+      <path fill="#3a4f43" d="M476.13 81.93 472.67 75l6.93.01Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    </g>
+    <rect width="75" height="18.8" x="480" y="12.6" fill="#141b17" rx="5"/>
+    <text x="485" y="22" fill="#e9efe9" dominant-baseline="central" font-family="Helvetica" font-size="11">while !(finish)</text>
+    <g stroke="#3a4f43" stroke-miterlimit="10" stroke-width="2">
+      <path fill="none" d="M560.13 399.84q-.07-51.14-42-51.14t-41.99 43.1" pointer-events="stroke" style="stroke:#3a4f43" transform="translate(.5 .5)"/>
+      <path fill="#3a4f43" d="m476.13 398.73-3.46-6.93 6.93.01Z" pointer-events="all" style="fill:#3a4f43;stroke:#3a4f43" transform="translate(.5 .5)"/>
+    </g>
+    <rect width="75" height="18.8" x="480" y="332.6" fill="#141b17" rx="5"/>
+    <text x="485" y="342" fill="light-dark(#000,#e9efe9)" dominant-baseline="central" font-family="Helvetica" font-size="11">while !(finish)</text>
   </g>
 </svg>

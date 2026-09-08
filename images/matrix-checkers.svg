@@ -16,68 +16,68 @@
     .pulse-el{animation:none}
   }
 </style>
-<rect x="0" y="0" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="22.375" y="0" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
-<rect x="44.75" y="0" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="67.125" y="0" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
-<rect x="89.5" y="0" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="111.875" y="0" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
-<rect x="134.25" y="0" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="156.625" y="0" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
-<rect x="0" y="22.375" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
-<rect x="22.375" y="22.375" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="44.75" y="22.375" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
-<rect x="67.125" y="22.375" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="89.5" y="22.375" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
-<rect x="111.875" y="22.375" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="134.25" y="22.375" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
-<rect x="156.625" y="22.375" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="0" y="44.75" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="22.375" y="44.75" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
-<rect x="44.75" y="44.75" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="67.125" y="44.75" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
-<rect x="89.5" y="44.75" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="111.875" y="44.75" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
-<rect x="134.25" y="44.75" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="156.625" y="44.75" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
-<rect x="0" y="67.125" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
-<rect x="22.375" y="67.125" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="44.75" y="67.125" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
-<rect x="67.125" y="67.125" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="89.5" y="67.125" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
-<rect x="111.875" y="67.125" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="134.25" y="67.125" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
-<rect x="156.625" y="67.125" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="0" y="89.5" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="22.375" y="89.5" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
-<rect x="44.75" y="89.5" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="67.125" y="89.5" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
-<rect x="89.5" y="89.5" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="111.875" y="89.5" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
-<rect x="134.25" y="89.5" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="156.625" y="89.5" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
-<rect x="0" y="111.875" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
-<rect x="22.375" y="111.875" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="44.75" y="111.875" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
-<rect x="67.125" y="111.875" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="89.5" y="111.875" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
-<rect x="111.875" y="111.875" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="134.25" y="111.875" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
-<rect x="156.625" y="111.875" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="0" y="134.25" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="22.375" y="134.25" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
-<rect x="44.75" y="134.25" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="67.125" y="134.25" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
-<rect x="89.5" y="134.25" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="111.875" y="134.25" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
-<rect x="134.25" y="134.25" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="156.625" y="134.25" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
-<rect x="0" y="156.625" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
-<rect x="22.375" y="156.625" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="44.75" y="156.625" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
-<rect x="67.125" y="156.625" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="89.5" y="156.625" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
-<rect x="111.875" y="156.625" width="19.375" height="19.375" rx="2" fill="#28332c"/>
-<rect x="134.25" y="156.625" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
-<rect x="156.625" y="156.625" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="0" y="0" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="22.375" y="0" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
+  <rect x="44.75" y="0" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="67.125" y="0" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
+  <rect x="89.5" y="0" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="111.875" y="0" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
+  <rect x="134.25" y="0" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="156.625" y="0" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
+  <rect x="0" y="22.375" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
+  <rect x="22.375" y="22.375" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="44.75" y="22.375" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
+  <rect x="67.125" y="22.375" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="89.5" y="22.375" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
+  <rect x="111.875" y="22.375" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="134.25" y="22.375" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
+  <rect x="156.625" y="22.375" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="0" y="44.75" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="22.375" y="44.75" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
+  <rect x="44.75" y="44.75" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="67.125" y="44.75" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
+  <rect x="89.5" y="44.75" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="111.875" y="44.75" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
+  <rect x="134.25" y="44.75" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="156.625" y="44.75" width="19.375" height="19.375" rx="2" fill="#ff5c5c" class="pulse-el" filter="url(#glow)"/>
+  <rect x="0" y="67.125" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
+  <rect x="22.375" y="67.125" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="44.75" y="67.125" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
+  <rect x="67.125" y="67.125" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="89.5" y="67.125" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
+  <rect x="111.875" y="67.125" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="134.25" y="67.125" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
+  <rect x="156.625" y="67.125" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="0" y="89.5" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="22.375" y="89.5" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
+  <rect x="44.75" y="89.5" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="67.125" y="89.5" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
+  <rect x="89.5" y="89.5" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="111.875" y="89.5" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
+  <rect x="134.25" y="89.5" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="156.625" y="89.5" width="19.375" height="19.375" rx="2" fill="#1a2119"/>
+  <rect x="0" y="111.875" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
+  <rect x="22.375" y="111.875" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="44.75" y="111.875" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
+  <rect x="67.125" y="111.875" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="89.5" y="111.875" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
+  <rect x="111.875" y="111.875" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="134.25" y="111.875" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
+  <rect x="156.625" y="111.875" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="0" y="134.25" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="22.375" y="134.25" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
+  <rect x="44.75" y="134.25" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="67.125" y="134.25" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
+  <rect x="89.5" y="134.25" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="111.875" y="134.25" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
+  <rect x="134.25" y="134.25" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="156.625" y="134.25" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
+  <rect x="0" y="156.625" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
+  <rect x="22.375" y="156.625" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="44.75" y="156.625" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
+  <rect x="67.125" y="156.625" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="89.5" y="156.625" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
+  <rect x="111.875" y="156.625" width="19.375" height="19.375" rx="2" fill="#28332c"/>
+  <rect x="134.25" y="156.625" width="19.375" height="19.375" rx="2" fill="#5b9dff" class="pulse-el" filter="url(#glow)"/>
+  <rect x="156.625" y="156.625" width="19.375" height="19.375" rx="2" fill="#28332c"/>
 </svg>

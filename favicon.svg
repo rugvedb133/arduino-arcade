@@ -1,29 +1,21 @@
-<svg width="64" height="64" viewBox="-2 -2 68 68" xmlns="http://www.w3.org/2000/svg" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="-2 -2 68 68">
   <title>Board Games on Arduino favicon</title>
   <defs>
-    <!-- Define the semi-transparent shadow filter -->
-    <filter id="semi-trans-shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#fff" flood-opacity="0.1" />
-    </filter>
-    <!-- Define a gradient that fades to transparent to mimic a blur -->
     <radialGradient id="shadowGradient" cx="50%" cy="50%" r="60%">
-      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#fff" stop-opacity=".2"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <rect x="-4" y="-4" width="72" height="72" rx="14"  fill="url(#shadowGradient)"/>
-  <rect x="0" y="0" width="64" height="64" rx="14" fill="#0b100d"/>
-
-  <!-- 3x3 LED grid, diagonal lit like the tic-tac-toe win state -->
-  <rect x="7"  y="7"  width="14" height="14" rx="3" fill="#ff5c5c"/>
-  <rect x="25" y="7"  width="14" height="14" rx="3" fill="#1b2620"/>
-  <rect x="43" y="7"  width="14" height="14" rx="3" fill="#1b2620"/>
-
-  <rect x="7"  y="25" width="14" height="14" rx="3" fill="#5b9dff"/>
-  <rect x="25" y="25" width="14" height="14" rx="3" fill="#ff5c5c"/>
-  <rect x="43" y="25" width="14" height="14" rx="3" fill="#1b2620"/>
-
-  <rect x="7"  y="43" width="14" height="14" rx="3" fill="#5b9dff"/>
-  <rect x="25" y="43" width="14" height="14" rx="3" fill="#1b2620"/>
-  <rect x="43" y="43" width="14" height="14" rx="3" fill="#ff5c5c"/>
+  <rect width="72" height="72" x="-4" y="-4" fill="url(#shadowGradient)" rx="14"/>
+  <rect width="64" height="64" fill="#0b100d" rx="14"/>
+<!--3x3 LED grid, diagonal lit like the tic-tac-toe win state-->
+  <rect width="14" height="14" x="7" y="7" fill="#ff5c5c" rx="3"/>
+  <rect width="14" height="14" x="25" y="7" fill="#1b2620" rx="3"/>
+  <rect width="14" height="14" x="43" y="7" fill="#1b2620" rx="3"/>
+  <rect width="14" height="14" x="7" y="25" fill="#5b9dff" rx="3"/>
+  <rect width="14" height="14" x="25" y="25" fill="#ff5c5c" rx="3"/>
+  <rect width="14" height="14" x="43" y="25" fill="#1b2620" rx="3"/>
+  <rect width="14" height="14" x="7" y="43" fill="#5b9dff" rx="3"/>
+  <rect width="14" height="14" x="25" y="43" fill="#1b2620" rx="3"/>
+  <rect width="14" height="14" x="43" y="43" fill="#ff5c5c" rx="3"/>
 </svg>
