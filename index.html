@@ -47,6 +47,7 @@
       <a href="#tictactoe">Tic-Tac-Toe</a>
       <a href="#checkers">Checkers</a>
       <a href="#reflection">What I Learned</a>
+      <a href="#future-work">What's Next</a>
     </div>
   </div>
 </nav>
@@ -115,7 +116,7 @@
 
     <figure>
       <object type="image/svg+xml" data="images/connection-diagram.svg" id="wiringDiagram"
-            aria-label="Fritzing wiring diagram showing the Arduino Mega connected to a 4×4 membrane keypad, a 16×2 LCD, and an 8×8 WS2812 LED matrix via a breadboard.">
+          aria-label="Fritzing wiring diagram showing the Arduino Mega connected to a 4×4 membrane keypad, a 16×2 LCD, and an 8×8 WS2812 LED matrix via a breadboard.">
         <img src="images/connection-diagram.png" alt="Fritzing wiring diagram showing the Arduino Mega connected to a 4×4 membrane keypad, a 16×2 LCD, and an 8×8 WS2812 LED matrix via a breadboard.">
       </object>
       <div class="keypad-toggle" role="group" aria-label="Keypad legend">
@@ -281,9 +282,40 @@
   </div>
 </section>
 
+<hr class="divider-line">
+
+<section id="future-work">
+  <div class="wrap">
+    <p class="eyebrow">Looking Ahead</p>
+    <h2>What's Next</h2>
+    <p class="section-intro">The keypad, matrix, and LCD are general enough that tic-tac-toe and checkers were really just the first two things I put on them. A few concrete next steps:</p>
+
+    <div class="future-grid">
+      <div class="future-col">
+        <h3>Games this hardware could handle</h3>
+        <ul class="feature-list">
+          <li><strong>Connect Four.</strong> A 7&times;6 board maps almost perfectly onto the 8&times;8 matrix. This wouldn't force the kind of compromise tic-tac-toe's 3&times;3 board did.</li>
+          <li><strong>Reversi / Othello.</strong> Also a native 8&times;8 fit, and its piece-flipping logic isn't that different from checkers' capture logic, allowing a fair amount of the board-representation code and game logic to carry over directly.</li>
+          <li><strong>Snake.</strong> Single-player, no AI required, and a 8&times;8 would be just enough for a minimal game experience.</li>
+          <li><strong>A Simon-style memory game.</strong> Flip the matrix from displaying static board state to flashing sequences. Could be worth exploring a genuinely different use of the same parts.</li>
+        </ul>
+      </div>
+      <div class="future-col">
+        <h3>Improvements to what's already built</h3>
+        <ul class="feature-list">
+          <li><strong>A higher-resolution matrix for tic-tac-toe.</strong> A 9&times;9 or 12&times;12 grid would let pieces render as real X/O shapes instead of color blocks.</li>
+          <li><strong>Finish the checkers minimax.</strong> Actually implement the alpha-beta search I'd originally planned, most realistically by moving to a board with more RAM (for example, an ESP32).</li>
+          <li><strong>Sound feedback.</strong> A piezo buzzer for moves, wins, and draws; cheap to add, already present in the Arduino starter kit, and makes the games more interesting as both are currently silent.</li>
+          <li><strong>Better input hardware.</strong> Swap the membrane keypad for real tactile arcade buttons, or revisit the joystick with better library support than was available the first time around.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="wrap footer-row">
-    <span class="footer-note">Coursework project &middot; CS122A, Intermediate Embedded Systems</span>
-    <a class="footer-back" href="/projects.html">&larr; Back to all projects</a>
+  <span class="footer-note">Coursework project &middot; CS122A, Intermediate Embedded Systems</span>
+  <a class="footer-back" href="/projects.html">&larr; Back to all projects</a>
 </footer>
 
 <dialog class="lightbox" id="lightbox" aria-label="Enlarged photo">
