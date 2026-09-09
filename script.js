@@ -3,13 +3,34 @@
   var lightboxImg = document.getElementById('lightboxImg');
   var closeBtn = document.getElementById('lightboxClose');
 
+  // The set of images arrow-key navigation cycles through,
+  // and where we currently are within it. 
+  // Recomputed each time the lightbox is opened.
+  var currentGroup = [];
+  var currentIndex = -1;
+
+  function showAt(index){
+    if(!currentGroup.length) return;
+    currentIndex = (index + currentGroup.length) % currentGroup.length; // wraps both directions
+    var btn = currentGroup[currentIndex];
+    lightboxImg.src = btn.getAttribute('data-full');
+    lightboxImg.alt = btn.querySelector('img').getAttribute('alt');
+  }
+
+  function openFrom(btn){
+    // Thumbs inside the same .gallery navigate as a set; a thumb on its
+    // own (the diagrams) is just a group of one, so arrow keys no-op.
+    var gallery = btn.closest('.gallery');
+    currentGroup = gallery
+      ? Array.prototype.slice.call(gallery.querySelectorAll('.thumb'))
+      : [btn];
+    showAt(currentGroup.indexOf(btn));
+    lightbox.showModal();
+  }
+
   document.querySelectorAll('.thumb').forEach(function(btn){
     btn.addEventListener('click', function(){
-      var full = btn.getAttribute('data-full');
-      var alt = btn.querySelector('img').getAttribute('alt');
-      lightboxImg.src = full;
-      lightboxImg.alt = alt;
-      lightbox.showModal();
+      openFrom(btn);
     });
   });
 
@@ -22,6 +43,17 @@
   // Fires on every close path — button, backdrop click, or native Escape handling.
   lightbox.addEventListener('close', function(){
     lightboxImg.src = '';
+    currentGroup = [];
+    currentIndex = -1;
+  });
+  lightbox.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowRight'){
+      e.preventDefault();
+      showAt(currentIndex + 1);
+    } else if(e.key === 'ArrowLeft'){
+      e.preventDefault();
+      showAt(currentIndex - 1);
+    }
   });
 })();
 

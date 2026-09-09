@@ -380,6 +380,7 @@ ul.feature-list li strong{color:var(--text-primary); font-weight:600;}
 .lightbox-close{
   position:absolute; top:20px; right:24px;
   font-family:'IBM Plex Mono', monospace;
+  text-align: center;
   background:none; border:1px solid var(--line);
   color:var(--copper);
   width:38px; height:38px; border-radius:50%;
