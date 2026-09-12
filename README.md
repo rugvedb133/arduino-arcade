@@ -1,11 +1,13 @@
-# Board Games on Arduino
-### Tic-Tac-Toe & Checkers, built from scratch on Arduino
+# Arduino Arcade
+### Tic-Tac-Toe & Checkers, built from scratch on an Arduino Mega
 
 **[→ View the project write-up](https://rugvedb133.github.io/arduino-arcade/)**
 
-![Arduino Arcade](/../gh-pages/images/social-preview.png)
+![Tic-Tac-Toe winning screen on the LED matrix](/../gh-pages/images/ttt-photo-2.avif)
 
 Two turn-based games sharing one hand-wired rig: an Arduino Mega, an 8×8 WS2812 LED matrix standing in for the board, a 16×2 LCD for status, and a 4×4 membrane keypad for input. Built for *CS122A — Intermediate Embedded Systems*.
+
+![Arduino](https://img.shields.io/badge/Arduino-00979D?style=flat&logo=arduino&logoColor=white) ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat&logo=cplusplus&logoColor=white) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=flat&logo=githubpages&logoColor=white)
 
 ## Demos
 
